@@ -1,4 +1,4 @@
-#include "stdio.h"
+#include <stdio.h>
 void EX_1(){
 	int in;
 	printf("Enter an integer you want to check: ");

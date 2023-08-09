@@ -7,5 +7,5 @@ void EX_4(){
 	if (in == 0)
 		printf("You entered zero");
 	else
-		printf("%f is %s", in, in > 0? "positive":"negative");
+		printf("%.2f is %s", in, in > 0? "positive":"negative");
 }

@@ -4,5 +4,5 @@ void EX_3(){
 	printf("Enter three numbers: ");
 	fflush(stdout); fflush(stdin);
 	scanf("%f %f %f", &a, &b, &c);
-	printf("Largest number = %f", a > b ? a : (b > c? b : c) );
+	printf("Largest number = %.2f", a > b ? a : (b > c? b : c) );
 }
