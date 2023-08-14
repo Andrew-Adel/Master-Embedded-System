@@ -1,0 +1,23 @@
+15:25:29 **** Incremental Build of configuration Debug for project led_toggle ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "led_toggle.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\Courses\Embedded System KS\Units\Unit 3\repo\Master-Embedded-System\EmbeddedC_Course\Led_Toggle\led_toggle\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="led_toggle.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: led_toggle.elf
+ 
+arm-none-eabi-objdump -h -S  led_toggle.elf  > "led_toggle.list"
+arm-none-eabi-objcopy  -O ihex  led_toggle.elf  "led_toggle.hex"
+arm-none-eabi-objcopy  -O binary  led_toggle.elf  "led_toggle.bin"
+arm-none-eabi-size   led_toggle.elf 
+   text	   data	    bss	    dec	    hex	filename
+    672	     12	   1564	   2248	    8c8	led_toggle.elf
+Finished building: led_toggle.list
+Finished building: led_toggle.hex
+Finished building: led_toggle.bin
+Finished building: default.size.stdout
+ 
+ 
+ 
+ 
+
+15:25:31 Build Finished. 0 errors, 0 warnings. (took 2s.353ms)
+
