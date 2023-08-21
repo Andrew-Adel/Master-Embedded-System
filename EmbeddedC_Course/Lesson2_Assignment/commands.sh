@@ -24,13 +24,20 @@ echo "startup.o:"
 arm-none-eabi-nm.exe startup.o
 
 echo "Linking linker_script.ld with object files and generate learn-in-depth.elf ..."
-arm-none-eabi-ld.exe -T linker_script.ld startup.o app.o uart.o -o learn-in-depth.elf -Map=Map_file.map
+	arm-none-eabi-ld.exe -T linker_script.ld startup.o app.o uart.o -o learn-in-depth.elf -Map=Map_file.map
 
 echo "object dump of learn-in-depth.elf:"
 arm-none-eabi-objdump.exe -h learn-in-depth.elf
 echo ""
 echo "analyze the executable file:"
 arm-none-eabi-nm learn-in-depth.elf
+
+echo "generate object symbols in text files..."
+arm-none-eabi-objdump.exe -D learn-in-depth.elf > learn-in-depth_elf.txt
+arm-none-eabi-objdump.exe -D app.o > app_o.txt
+arm-none-eabi-objdump.exe -D uart.o > uart_o.txt
+arm-none-eabi-objdump.exe -D startup.o > startup_o.txt
+
 
 echo "generate binary file ..."
 arm-none-eabi-objcopy -O binary learn-in-depth.elf learn-in-depth.bin
