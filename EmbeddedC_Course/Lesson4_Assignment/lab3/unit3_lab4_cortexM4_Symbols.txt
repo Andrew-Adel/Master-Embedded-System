@@ -1,0 +1,15 @@
+20000400 B _E_BSS
+20000000 T _E_DATA
+000001a4 T _E_TEXT
+20000000 B _S_BSS
+20000000 T _S_DATA
+000000e4 W Bus_Fault_Handler
+000000e4 T Default_Handler
+00000000 T g_p_fn_Vectors
+000000e4 W H_Fault_Handler
+0000001c T main
+000000e4 W MM_Fault_Handler
+000000e4 W NMI_Handler
+000000f0 T Rest_Handler
+20000000 b stack
+000000e4 W Usage_Fault_Handler
