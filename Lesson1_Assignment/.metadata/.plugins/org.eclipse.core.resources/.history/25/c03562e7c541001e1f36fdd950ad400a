@@ -1,0 +1,33 @@
+/*
+ * main.c
+ *
+ *  Created on: Aug 23, 2023
+ *      Author: andre
+ */
+
+#include "lifo.h"
+
+
+uint32 buffer1[5];
+
+int main(){
+	uint32* buffer2 = (uint32*)malloc(5*sizeof(uint32));
+
+	LIFO_Buf_t uart_lifo, i2c_lifo;
+
+	LIFO_Init(&uart_lifo, buffer1,5); // static
+	LIFO_Init(&i2c_lifo, buffer2,5);  // buffer is reserved dynamically in heap
+
+	int i;
+	for (i = 0; i < 6; ++i) {
+		if (LIFO_Push_Item(&uart_lifo, i) == LIFO_no_error)
+			printf("push item %d\n",i);
+	}
+	uint32 temp;
+	for (i = 0; i < 6; ++i) {
+			if (LIFO_Pop_Item(&i2c_lifo, &temp) == LIFO_no_error)
+				printf("pop item %d\n",temp);
+		}
+
+	return 0;
+}

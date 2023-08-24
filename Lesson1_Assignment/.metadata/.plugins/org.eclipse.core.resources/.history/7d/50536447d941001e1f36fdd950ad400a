@@ -1,0 +1,19 @@
+/*
+ * main.c
+ *
+ *  Created on: Aug 23, 2023
+ *      Author: andre
+ */
+
+#include "fifo.h"
+int main(){
+	FIFO_Buf_t fifo_UART;
+	element_type i, temp;
+	if (FIFO_Init(&fifo_UART,uart_buffer, width1) == FIFO_no_error) {
+		print("fifo init ----- Done\n");
+	} else {
+
+	}
+
+	return 0;
+}
