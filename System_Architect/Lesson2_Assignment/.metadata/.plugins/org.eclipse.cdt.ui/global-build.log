@@ -1,0 +1,323 @@
+00:14:31 **** Rebuild of configuration Debug for project Collision_Avoidance ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Collision_Avoidance.o "..\\Collision_Avoidance.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o DC_motor.o "..\\DC_motor.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o US_Sensor.o "..\\US_Sensor.c" 
+In file included from ..\US_Sensor.h:12:0,
+                 from ..\US_Sensor.c:8:
+..\State.h:19:1: warning: data definition has no type or storage class
+ US_distance_get(int d);
+ ^~~~~~~~~~~~~~~
+..\State.h:19:1: warning: type defaults to 'int' in declaration of 'US_distance_get' [-Wimplicit-int]
+..\State.h:20:1: warning: data definition has no type or storage class
+ DC_motor(int s);
+ ^~~~~~~~
+..\State.h:20:1: warning: type defaults to 'int' in declaration of 'DC_motor' [-Wimplicit-int]
+gcc -o Collision_Avoidance.exe Collision_Avoidance.o DC_motor.o US_Sensor.o main.o 
+US_Sensor.o: In function `ST_US_busy':
+E:\Courses\Embedded System KS\Units\Unit 4 (System Architecture)\Repo\Master-Embedded-System\System_Architect\Lesson2_Assignment\Collision_Avoidance\Debug/../US_Sensor.c:36: undefined reference to `US_distance_get'
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../libmingw32.a(main.o):(.text.startup+0xa0): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+00:18:17 **** Incremental Build of configuration Debug for project Collision_Avoidance ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o US_Sensor.o "..\\US_Sensor.c" 
+gcc -o Collision_Avoidance.exe Collision_Avoidance.o DC_motor.o US_Sensor.o main.o 
+US_Sensor.o: In function `ST_US_busy':
+E:\Courses\Embedded System KS\Units\Unit 4 (System Architecture)\Repo\Master-Embedded-System\System_Architect\Lesson2_Assignment\Collision_Avoidance\Debug/../US_Sensor.c:36: undefined reference to `US_distance_get'
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../libmingw32.a(main.o):(.text.startup+0xa0): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+00:29:56 **** Incremental Build of configuration Debug for project Collision_Avoidance ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o DC_motor.o "..\\DC_motor.c" 
+..\DC_motor.c: In function 'ST_DC_idle':
+..\DC_motor.c:42:43: error: 'distance' undeclared (first use in this function)
+  printf("DC_busy state : distance=%d \n", distance);
+                                           ^~~~~~~~
+..\DC_motor.c:42:43: note: each undeclared identifier is reported only once for each function it appears in
+00:30:32 **** Incremental Build of configuration Debug for project Collision_Avoidance ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o DC_motor.o "..\\DC_motor.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o US_Sensor.o "..\\US_Sensor.c" 
+gcc -o Collision_Avoidance.exe Collision_Avoidance.o DC_motor.o US_Sensor.o main.o 
+DC_motor.o: In function `ST_DC_busy':
+E:\Courses\Embedded System KS\Units\Unit 4 (System Architecture)\Repo\Master-Embedded-System\System_Architect\Lesson2_Assignment\Collision_Avoidance\Debug/../DC_motor.c:29: undefined reference to `DC_State'
+DC_motor.o: In function `ST_DC_idle':
+E:\Courses\Embedded System KS\Units\Unit 4 (System Architecture)\Repo\Master-Embedded-System\System_Architect\Lesson2_Assignment\Collision_Avoidance\Debug/../DC_motor.c:40: undefined reference to `DC_State'
+US_Sensor.o: In function `ST_US_busy':
+E:\Courses\Embedded System KS\Units\Unit 4 (System Architecture)\Repo\Master-Embedded-System\System_Architect\Lesson2_Assignment\Collision_Avoidance\Debug/../US_Sensor.c:36: undefined reference to `US_distance_get'
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../libmingw32.a(main.o):(.text.startup+0xa0): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+00:31:28 **** Incremental Build of configuration Debug for project Collision_Avoidance ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o DC_motor.o "..\\DC_motor.c" 
+gcc -o Collision_Avoidance.exe Collision_Avoidance.o DC_motor.o US_Sensor.o main.o 
+US_Sensor.o: In function `ST_US_busy':
+E:\Courses\Embedded System KS\Units\Unit 4 (System Architecture)\Repo\Master-Embedded-System\System_Architect\Lesson2_Assignment\Collision_Avoidance\Debug/../US_Sensor.c:36: undefined reference to `US_distance_get'
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../libmingw32.a(main.o):(.text.startup+0xa0): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+00:31:45 **** Incremental Build of configuration Debug for project Collision_Avoidance ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o US_Sensor.o "..\\US_Sensor.c" 
+gcc -o Collision_Avoidance.exe Collision_Avoidance.o DC_motor.o US_Sensor.o main.o 
+US_Sensor.o: In function `ST_US_busy':
+E:\Courses\Embedded System KS\Units\Unit 4 (System Architecture)\Repo\Master-Embedded-System\System_Architect\Lesson2_Assignment\Collision_Avoidance\Debug/../US_Sensor.c:37: undefined reference to `US_distance_get'
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../libmingw32.a(main.o):(.text.startup+0xa0): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+09:07:43 **** Incremental Build of configuration Debug for project Collision_Avoidance ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Collision_Avoidance.o "..\\Collision_Avoidance.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o DC_motor.o "..\\DC_motor.c" 
+..\DC_motor.c:21:1: warning: return type defaults to 'int' [-Wimplicit-int]
+ DC_motor(int s){
+ ^~~~~~~~
+..\DC_motor.c:21:1: warning: conflicting types for 'DC_motor'
+In file included from ..\DC_motor.h:13:0,
+                 from ..\DC_motor.c:9:
+..\State.h:20:6: note: previous declaration of 'DC_motor' was here
+ void DC_motor(int s);
+      ^~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o US_Sensor.o "..\\US_Sensor.c" 
+gcc -o Collision_Avoidance.exe Collision_Avoidance.o DC_motor.o US_Sensor.o main.o 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../libmingw32.a(main.o):(.text.startup+0xa0): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+09:20:31 **** Incremental Build of configuration Debug for project Collision_Avoidance ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o DC_motor.o "..\\DC_motor.c" 
+..\DC_motor.c:23:1: warning: return type defaults to 'int' [-Wimplicit-int]
+ DC_motor(int s){
+ ^~~~~~~~
+..\DC_motor.c:23:1: warning: conflicting types for 'DC_motor'
+In file included from ..\DC_motor.h:13:0,
+                 from ..\DC_motor.c:9:
+..\State.h:20:6: note: previous declaration of 'DC_motor' was here
+ void DC_motor(int s);
+      ^~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o US_Sensor.o "..\\US_Sensor.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c: In function 'setup':
+..\main.c:21:2: error: 'US_State' undeclared (first use in this function)
+  US_State = STATE(US_busy);
+  ^~~~~~~~
+..\main.c:21:2: note: each undeclared identifier is reported only once for each function it appears in
+..\main.c:22:2: error: 'DC_State' undeclared (first use in this function)
+  DC_State = STATE(DC_idle);
+  ^~~~~~~~
+..\main.c: In function 'main':
+..\main.c:28:11: warning: type defaults to 'int' in declaration of 'd' [-Wimplicit-int]
+  volatile d;
+           ^
+..\main.c:30:3: warning: implicit declaration of function 'US_State' [-Wimplicit-function-declaration]
+   US_State();
+   ^~~~~~~~
+..\main.c:32:3: warning: implicit declaration of function 'DC_State' [-Wimplicit-function-declaration]
+   DC_State();
+   ^~~~~~~~
+09:21:07 **** Incremental Build of configuration Debug for project Collision_Avoidance ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o DC_motor.o "..\\DC_motor.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c: In function 'setup':
+..\main.c:21:2: error: 'US_State' undeclared (first use in this function)
+  US_State = STATE(US_busy);
+  ^~~~~~~~
+..\main.c:21:2: note: each undeclared identifier is reported only once for each function it appears in
+..\main.c:22:2: error: 'DC_State' undeclared (first use in this function)
+  DC_State = STATE(DC_idle);
+  ^~~~~~~~
+..\main.c: In function 'main':
+..\main.c:28:11: warning: type defaults to 'int' in declaration of 'd' [-Wimplicit-int]
+  volatile d;
+           ^
+..\main.c:30:3: warning: implicit declaration of function 'US_State' [-Wimplicit-function-declaration]
+   US_State();
+   ^~~~~~~~
+..\main.c:32:3: warning: implicit declaration of function 'DC_State' [-Wimplicit-function-declaration]
+   DC_State();
+   ^~~~~~~~
+09:22:03 **** Incremental Build of configuration Debug for project Collision_Avoidance ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o US_Sensor.o "..\\US_Sensor.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c: In function 'setup':
+..\main.c:23:2: error: 'DC_State' undeclared (first use in this function)
+  DC_State = STATE(DC_idle);
+  ^~~~~~~~
+..\main.c:23:2: note: each undeclared identifier is reported only once for each function it appears in
+..\main.c: In function 'main':
+..\main.c:29:11: warning: type defaults to 'int' in declaration of 'd' [-Wimplicit-int]
+  volatile d;
+           ^
+..\main.c:33:3: warning: implicit declaration of function 'DC_State' [-Wimplicit-function-declaration]
+   DC_State();
+   ^~~~~~~~
+09:22:42 **** Incremental Build of configuration Debug for project Collision_Avoidance ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o DC_motor.o "..\\DC_motor.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c: In function 'main':
+..\main.c:30:11: warning: type defaults to 'int' in declaration of 'd' [-Wimplicit-int]
+  volatile d;
+           ^
+gcc -o Collision_Avoidance.exe Collision_Avoidance.o DC_motor.o US_Sensor.o main.o 
+DC_motor.o: In function `DC_motor':
+E:\Courses\Embedded System KS\Units\Unit 4 (System Architecture)\Repo\Master-Embedded-System\System_Architect\Lesson2_Assignment\Collision_Avoidance\Debug/../DC_motor.c:24: undefined reference to `DC_State'
+DC_motor.o: In function `ST_DC_busy':
+E:\Courses\Embedded System KS\Units\Unit 4 (System Architecture)\Repo\Master-Embedded-System\System_Architect\Lesson2_Assignment\Collision_Avoidance\Debug/../DC_motor.c:34: undefined reference to `DC_State'
+DC_motor.o: In function `ST_DC_idle':
+E:\Courses\Embedded System KS\Units\Unit 4 (System Architecture)\Repo\Master-Embedded-System\System_Architect\Lesson2_Assignment\Collision_Avoidance\Debug/../DC_motor.c:46: undefined reference to `DC_State'
+US_Sensor.o: In function `ST_US_busy':
+E:\Courses\Embedded System KS\Units\Unit 4 (System Architecture)\Repo\Master-Embedded-System\System_Architect\Lesson2_Assignment\Collision_Avoidance\Debug/../US_Sensor.c:39: undefined reference to `US_State'
+main.o: In function `setup':
+E:\Courses\Embedded System KS\Units\Unit 4 (System Architecture)\Repo\Master-Embedded-System\System_Architect\Lesson2_Assignment\Collision_Avoidance\Debug/../main.c:23: undefined reference to `US_State'
+E:\Courses\Embedded System KS\Units\Unit 4 (System Architecture)\Repo\Master-Embedded-System\System_Architect\Lesson2_Assignment\Collision_Avoidance\Debug/../main.c:24: undefined reference to `DC_State'
+main.o: In function `main':
+E:\Courses\Embedded System KS\Units\Unit 4 (System Architecture)\Repo\Master-Embedded-System\System_Architect\Lesson2_Assignment\Collision_Avoidance\Debug/../main.c:32: undefined reference to `US_State'
+E:\Courses\Embedded System KS\Units\Unit 4 (System Architecture)\Repo\Master-Embedded-System\System_Architect\Lesson2_Assignment\Collision_Avoidance\Debug/../main.c:34: undefined reference to `DC_State'
+collect2.exe: error: ld returned 1 exit status
+09:23:14 **** Incremental Build of configuration Debug for project Collision_Avoidance ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c: In function 'main':
+..\main.c:30:11: warning: type defaults to 'int' in declaration of 'd' [-Wimplicit-int]
+  volatile d;
+           ^
+gcc -o Collision_Avoidance.exe Collision_Avoidance.o DC_motor.o US_Sensor.o main.o 
+DC_motor.o: In function `DC_motor':
+E:\Courses\Embedded System KS\Units\Unit 4 (System Architecture)\Repo\Master-Embedded-System\System_Architect\Lesson2_Assignment\Collision_Avoidance\Debug/../DC_motor.c:24: undefined reference to `DC_State'
+DC_motor.o: In function `ST_DC_busy':
+E:\Courses\Embedded System KS\Units\Unit 4 (System Architecture)\Repo\Master-Embedded-System\System_Architect\Lesson2_Assignment\Collision_Avoidance\Debug/../DC_motor.c:34: undefined reference to `DC_State'
+DC_motor.o: In function `ST_DC_idle':
+E:\Courses\Embedded System KS\Units\Unit 4 (System Architecture)\Repo\Master-Embedded-System\System_Architect\Lesson2_Assignment\Collision_Avoidance\Debug/../DC_motor.c:46: undefined reference to `DC_State'
+US_Sensor.o: In function `ST_US_busy':
+E:\Courses\Embedded System KS\Units\Unit 4 (System Architecture)\Repo\Master-Embedded-System\System_Architect\Lesson2_Assignment\Collision_Avoidance\Debug/../US_Sensor.c:39: undefined reference to `US_State'
+main.o: In function `setup':
+E:\Courses\Embedded System KS\Units\Unit 4 (System Architecture)\Repo\Master-Embedded-System\System_Architect\Lesson2_Assignment\Collision_Avoidance\Debug/../main.c:23: undefined reference to `US_State'
+E:\Courses\Embedded System KS\Units\Unit 4 (System Architecture)\Repo\Master-Embedded-System\System_Architect\Lesson2_Assignment\Collision_Avoidance\Debug/../main.c:24: undefined reference to `DC_State'
+main.o: In function `main':
+E:\Courses\Embedded System KS\Units\Unit 4 (System Architecture)\Repo\Master-Embedded-System\System_Architect\Lesson2_Assignment\Collision_Avoidance\Debug/../main.c:32: undefined reference to `US_State'
+E:\Courses\Embedded System KS\Units\Unit 4 (System Architecture)\Repo\Master-Embedded-System\System_Architect\Lesson2_Assignment\Collision_Avoidance\Debug/../main.c:34: undefined reference to `DC_State'
+collect2.exe: error: ld returned 1 exit status
+09:23:47 **** Incremental Build of configuration Debug for project Collision_Avoidance ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o US_Sensor.o "..\\US_Sensor.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c: In function 'main':
+..\main.c:29:11: warning: type defaults to 'int' in declaration of 'd' [-Wimplicit-int]
+  volatile d;
+           ^
+gcc -o Collision_Avoidance.exe Collision_Avoidance.o DC_motor.o US_Sensor.o main.o 
+DC_motor.o: In function `DC_motor':
+E:\Courses\Embedded System KS\Units\Unit 4 (System Architecture)\Repo\Master-Embedded-System\System_Architect\Lesson2_Assignment\Collision_Avoidance\Debug/../DC_motor.c:24: undefined reference to `DC_State'
+DC_motor.o: In function `ST_DC_busy':
+E:\Courses\Embedded System KS\Units\Unit 4 (System Architecture)\Repo\Master-Embedded-System\System_Architect\Lesson2_Assignment\Collision_Avoidance\Debug/../DC_motor.c:34: undefined reference to `DC_State'
+DC_motor.o: In function `ST_DC_idle':
+E:\Courses\Embedded System KS\Units\Unit 4 (System Architecture)\Repo\Master-Embedded-System\System_Architect\Lesson2_Assignment\Collision_Avoidance\Debug/../DC_motor.c:46: undefined reference to `DC_State'
+main.o: In function `setup':
+E:\Courses\Embedded System KS\Units\Unit 4 (System Architecture)\Repo\Master-Embedded-System\System_Architect\Lesson2_Assignment\Collision_Avoidance\Debug/../main.c:23: undefined reference to `DC_State'
+main.o: In function `main':
+E:\Courses\Embedded System KS\Units\Unit 4 (System Architecture)\Repo\Master-Embedded-System\System_Architect\Lesson2_Assignment\Collision_Avoidance\Debug/../main.c:33: undefined reference to `DC_State'
+collect2.exe: error: ld returned 1 exit status
+09:24:12 **** Incremental Build of configuration Debug for project Collision_Avoidance ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o US_Sensor.o "..\\US_Sensor.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c: In function 'main':
+..\main.c:29:11: warning: type defaults to 'int' in declaration of 'd' [-Wimplicit-int]
+  volatile d;
+           ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o DC_motor.o "..\\DC_motor.c" 
+gcc -o Collision_Avoidance.exe Collision_Avoidance.o DC_motor.o US_Sensor.o main.o 
+09:24:33 **** Incremental Build of configuration Debug for project Collision_Avoidance ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o US_Sensor.o "..\\US_Sensor.c" 
+gcc -o Collision_Avoidance.exe Collision_Avoidance.o DC_motor.o US_Sensor.o main.o 
+09:24:42 **** Incremental Build of configuration Debug for project Collision_Avoidance ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o Collision_Avoidance.exe Collision_Avoidance.o DC_motor.o US_Sensor.o main.o 
+09:24:52 **** Incremental Build of configuration Debug for project Collision_Avoidance ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o DC_motor.o "..\\DC_motor.c" 
+gcc -o Collision_Avoidance.exe Collision_Avoidance.o DC_motor.o US_Sensor.o main.o 
+09:26:49 **** Incremental Build of configuration Debug for project Collision_Avoidance ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o Collision_Avoidance.exe Collision_Avoidance.o DC_motor.o US_Sensor.o main.o 
+09:29:57 **** Incremental Build of configuration Debug for project Collision_Avoidance ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o Collision_Avoidance.exe Collision_Avoidance.o DC_motor.o US_Sensor.o main.o 
+09:31:32 **** Incremental Build of configuration Debug for project Collision_Avoidance ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o US_Sensor.o "..\\US_Sensor.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o DC_motor.o "..\\DC_motor.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Collision_Avoidance.o "..\\Collision_Avoidance.c" 
+gcc -o Collision_Avoidance.exe Collision_Avoidance.o DC_motor.o US_Sensor.o main.o 
+09:35:03 **** Incremental Build of configuration Debug for project Collision_Avoidance ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Collision_Avoidance.o "..\\Collision_Avoidance.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o DC_motor.o "..\\DC_motor.c" 
+gcc -o Collision_Avoidance.exe Collision_Avoidance.o DC_motor.o US_Sensor.o main.o 
+09:37:48 **** Incremental Build of configuration Debug for project Collision_Avoidance ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c: In function 'main':
+..\main.c:30:17: warning: unused variable 'd' [-Wunused-variable]
+  volatile int i,d;
+                 ^
+gcc -o Collision_Avoidance.exe Collision_Avoidance.o DC_motor.o US_Sensor.o main.o 
+09:38:09 **** Incremental Build of configuration Debug for project Collision_Avoidance ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o Collision_Avoidance.exe Collision_Avoidance.o DC_motor.o US_Sensor.o main.o 
+09:38:32 **** Incremental Build of configuration Debug for project Collision_Avoidance ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o Collision_Avoidance.exe Collision_Avoidance.o DC_motor.o US_Sensor.o main.o 
+09:40:00 **** Incremental Build of configuration Debug for project Collision_Avoidance ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Collision_Avoidance.o "..\\Collision_Avoidance.c" 
+gcc -o Collision_Avoidance.exe Collision_Avoidance.o DC_motor.o US_Sensor.o main.o 
+09:41:04 **** Incremental Build of configuration Debug for project Collision_Avoidance ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o DC_motor.o "..\\DC_motor.c" 
+gcc -o Collision_Avoidance.exe Collision_Avoidance.o DC_motor.o US_Sensor.o main.o 
+09:41:22 **** Incremental Build of configuration Debug for project Collision_Avoidance ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o DC_motor.o "..\\DC_motor.c" 
+gcc -o Collision_Avoidance.exe Collision_Avoidance.o DC_motor.o US_Sensor.o main.o 
+09:42:26 **** Incremental Build of configuration Debug for project Collision_Avoidance ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Collision_Avoidance.o "..\\Collision_Avoidance.c" 
+gcc -o Collision_Avoidance.exe Collision_Avoidance.o DC_motor.o US_Sensor.o main.o 
+09:43:02 **** Incremental Build of configuration Debug for project Collision_Avoidance ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Collision_Avoidance.o "..\\Collision_Avoidance.c" 
+gcc -o Collision_Avoidance.exe Collision_Avoidance.o DC_motor.o US_Sensor.o main.o 
+09:44:19 **** Incremental Build of configuration Debug for project Collision_Avoidance ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Collision_Avoidance.o "..\\Collision_Avoidance.c" 
+gcc -o Collision_Avoidance.exe Collision_Avoidance.o DC_motor.o US_Sensor.o main.o 
+09:45:42 **** Incremental Build of configuration Debug for project Collision_Avoidance ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Collision_Avoidance.o "..\\Collision_Avoidance.c" 
+gcc -o Collision_Avoidance.exe Collision_Avoidance.o DC_motor.o US_Sensor.o main.o 
+10:05:39 **** Incremental Build of configuration Debug for project Collision_Avoidance ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c: In function 'main':
+..\main.c:30:15: warning: unused variable 'i' [-Wunused-variable]
+  volatile int i,d;
+               ^
+gcc -o Collision_Avoidance.exe Collision_Avoidance.o DC_motor.o US_Sensor.o main.o 
+10:07:34 **** Incremental Build of configuration Debug for project Collision_Avoidance ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o Collision_Avoidance.exe Collision_Avoidance.o DC_motor.o US_Sensor.o main.o 
+10:07:54 **** Incremental Build of configuration Debug for project Collision_Avoidance ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o Collision_Avoidance.exe Collision_Avoidance.o DC_motor.o US_Sensor.o main.o 
+Info: Nothing to build for Collision_Avoidance

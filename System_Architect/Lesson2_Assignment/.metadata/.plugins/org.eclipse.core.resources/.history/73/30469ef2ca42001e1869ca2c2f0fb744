@@ -1,0 +1,19 @@
+/*
+ * US_Sensor.c
+ *
+ *  Created on: Aug 24, 2023
+ *      Author: andre
+ */
+
+#include "US_Sensor.h"
+
+void US_init(void){
+	// initialize US Sensor
+	// Call US Driver or sensors
+	printf("US_Init is Done");
+}
+
+int generate_random(int l, int r)
+{
+	return rand()% (r-l+1) +l;
+}

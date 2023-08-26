@@ -1,0 +1,12 @@
+/*
+ * State.h
+ *
+ *  Created on: Aug 24, 2023
+ *      Author: andre
+ */
+
+
+#ifndef _STATE_H
+#define _STATE_H
+
+#define STATE_define(_StateFunc) void ST_##_StateFunc_()

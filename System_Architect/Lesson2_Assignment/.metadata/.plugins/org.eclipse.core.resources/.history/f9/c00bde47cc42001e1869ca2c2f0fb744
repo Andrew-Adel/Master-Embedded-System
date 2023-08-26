@@ -1,0 +1,27 @@
+/*
+ * DC_motor.h
+ *
+ *  Created on: Aug 24, 2023
+ *      Author: andre
+ */
+
+
+
+#ifndef _DC_SENSOR_H_
+#define _DC_SENSOR_H_
+
+#include "State.h"
+
+enum {
+	DC_busy
+}DC_state_id;
+
+// function to initialize DC sensor
+void DC_init(void);
+// generate function of each state
+STATE_define(DC_bbuy);
+
+//define global pointer to function for states
+void (*DC_State) ();
+
+#endif
