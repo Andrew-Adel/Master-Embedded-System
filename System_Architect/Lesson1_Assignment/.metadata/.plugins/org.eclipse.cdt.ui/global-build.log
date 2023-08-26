@@ -1,0 +1,1973 @@
+16:34:20 **** Rebuild of configuration Debug for project LIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o lifo.o "..\\lifo.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:13:5: error: two or more data types in declaration specifiers
+ int int main() {
+     ^~~
+..\main.c: In function 'main':
+..\main.c:18:2: error: too few arguments to function 'LIFO_Init'
+  LIFO_Init(&uart_lifo, buffer1); // static
+  ^~~~~~~~~
+In file included from ..\main.c:8:0:
+..\lifo.h:32:13: note: declared here
+ LIFO_status LIFO_Init(LIFO_Buf_t* lifo_buf, uint32* buf, uint32 length);
+             ^~~~~~~~~
+..\main.c:19:2: error: too few arguments to function 'LIFO_Init'
+  LIFO_Init(&i2c_lifo, buffer2);  // buffer is reserved dynamically in heap
+  ^~~~~~~~~
+In file included from ..\main.c:8:0:
+..\lifo.h:32:13: note: declared here
+ LIFO_status LIFO_Init(LIFO_Buf_t* lifo_buf, uint32* buf, uint32 length);
+             ^~~~~~~~~
+..\main.c:28:34: warning: passing argument 2 of 'LIFO_Pop_Item' from incompatible pointer type [-Wincompatible-pointer-types]
+    if (LIFO_Pop_Item(&uart_lifo, &i) == LIFO_no_error)
+                                  ^
+In file included from ..\main.c:8:0:
+..\lifo.h:31:13: note: expected 'uint32 * {aka long unsigned int *}' but argument is of type 'int *'
+ LIFO_status LIFO_Pop_Item(LIFO_Buf_t* lifo_buf, uint32* item);
+             ^~~~~~~~~~~~~
+..\main.c:29:23: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+     printf("pop item %d\n",temp);
+                       ^
+16:34:59 **** Incremental Build of configuration Debug for project LIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c: In function 'main':
+..\main.c:28:34: warning: passing argument 2 of 'LIFO_Pop_Item' from incompatible pointer type [-Wincompatible-pointer-types]
+    if (LIFO_Pop_Item(&uart_lifo, &i) == LIFO_no_error)
+                                  ^
+In file included from ..\main.c:8:0:
+..\lifo.h:31:13: note: expected 'uint32 * {aka long unsigned int *}' but argument is of type 'int *'
+ LIFO_status LIFO_Pop_Item(LIFO_Buf_t* lifo_buf, uint32* item);
+             ^~~~~~~~~~~~~
+..\main.c:29:23: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+     printf("pop item %d\n",temp);
+                       ^
+..\main.c:29:5: warning: 'temp' may be used uninitialized in this function [-Wmaybe-uninitialized]
+     printf("pop item %d\n",temp);
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o LIFO_Buffer.exe lifo.o main.o 
+16:35:36 **** Incremental Build of configuration Debug for project LIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c: In function 'main':
+..\main.c:29:23: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+     printf("pop item %d\n",temp);
+                       ^
+gcc -o LIFO_Buffer.exe lifo.o main.o 
+16:35:55 **** Incremental Build of configuration Debug for project LIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c: In function 'main':
+..\main.c:29:24: warning: unknown conversion type character 0xa in format [-Wformat=]
+     printf("pop item %l\n",temp);
+                        ^
+..\main.c:29:12: warning: too many arguments for format [-Wformat-extra-args]
+     printf("pop item %l\n",temp);
+            ^~~~~~~~~~~~~~~
+gcc -o LIFO_Buffer.exe lifo.o main.o 
+16:36:05 **** Incremental Build of configuration Debug for project LIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c: In function 'main':
+..\main.c:29:23: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+     printf("pop item %d\n",temp);
+                       ^
+gcc -o LIFO_Buffer.exe lifo.o main.o 
+Info: Nothing to build for LIFO_Buffer
+16:37:29 **** Incremental Build of configuration Debug for project LIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c: In function 'main':
+..\main.c:29:23: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+     printf("pop item %d\n",temp);
+                       ^
+gcc -o LIFO_Buffer.exe lifo.o main.o 
+Info: Nothing to build for LIFO_Buffer
+Info: Nothing to build for LIFO_Buffer
+20:04:06 **** Rebuild of configuration Debug for project FIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o fifo.o "..\\fifo.c" 
+..\fifo.c: In function 'FIFO_Init':
+..\fifo.c:19:6: warning: statement with no effect [-Wunused-value]
+  fifo->head buf;
+  ~~~~^~~~~~
+..\fifo.c:19:13: error: expected ';' before 'buf'
+  fifo->head buf;
+             ^~~
+20:04:33 **** Incremental Build of configuration Debug for project FIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o fifo.o "..\\fifo.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c: In function 'main':
+..\main.c:13:3: warning: implicit declaration of function 'print' [-Wimplicit-function-declaration]
+   print("FIFO init ----- Done\n");
+   ^~~~~
+..\main.c:16:3: warning: implicit declaration of function 'exit' [-Wimplicit-function-declaration]
+   exit(0);
+   ^~~~
+..\main.c:16:3: warning: incompatible implicit declaration of built-in function 'exit'
+..\main.c:16:3: note: include '<stdlib.h>' or provide a declaration of 'exit'
+gcc -o FIFO_Buffer.exe fifo.o main.o 
+main.o: In function `main':
+E:\Courses\Embedded System KS\Units\Unit 4 (System Architecture)\Lesson1\codes\FIFO_Buffer\Debug/../main.c:13: undefined reference to `print'
+E:\Courses\Embedded System KS\Units\Unit 4 (System Architecture)\Lesson1\codes\FIFO_Buffer\Debug/../main.c:15: undefined reference to `print'
+E:\Courses\Embedded System KS\Units\Unit 4 (System Architecture)\Lesson1\codes\FIFO_Buffer\Debug/../main.c:19: undefined reference to `print'
+E:\Courses\Embedded System KS\Units\Unit 4 (System Architecture)\Lesson1\codes\FIFO_Buffer\Debug/../main.c:21: undefined reference to `print'
+E:\Courses\Embedded System KS\Units\Unit 4 (System Architecture)\Lesson1\codes\FIFO_Buffer\Debug/../main.c:23: undefined reference to `print'
+main.o:E:\Courses\Embedded System KS\Units\Unit 4 (System Architecture)\Lesson1\codes\FIFO_Buffer\Debug/../main.c:29: more undefined references to `print' follow
+collect2.exe: error: ld returned 1 exit status
+20:05:10 **** Incremental Build of configuration Debug for project FIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c: In function 'main':
+..\main.c:16:3: warning: implicit declaration of function 'exit' [-Wimplicit-function-declaration]
+   exit(0);
+   ^~~~
+..\main.c:16:3: warning: incompatible implicit declaration of built-in function 'exit'
+..\main.c:16:3: note: include '<stdlib.h>' or provide a declaration of 'exit'
+gcc -o FIFO_Buffer.exe fifo.o main.o 
+20:05:40 **** Incremental Build of configuration Debug for project FIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o FIFO_Buffer.exe fifo.o main.o 
+20:05:59 **** Incremental Build of configuration Debug for project FIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c: In function 'main':
+..\main.c:16:3: warning: implicit declaration of function 'exit' [-Wimplicit-function-declaration]
+   exit(1);
+   ^~~~
+..\main.c:16:3: warning: incompatible implicit declaration of built-in function 'exit'
+..\main.c:16:3: note: include '<stdlib.h>' or provide a declaration of 'exit'
+gcc -o FIFO_Buffer.exe fifo.o main.o 
+20:06:23 **** Incremental Build of configuration Debug for project FIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:9:20: warning: extra tokens at end of #include directive
+ #include <stdlib.h>;
+                    ^
+gcc -o FIFO_Buffer.exe fifo.o main.o 
+20:06:30 **** Incremental Build of configuration Debug for project FIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o FIFO_Buffer.exe fifo.o main.o 
+Info: Nothing to build for FIFO_Buffer
+20:07:19 **** Incremental Build of configuration Debug for project FIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o FIFO_Buffer.exe fifo.o main.o 
+Info: Nothing to build for FIFO_Buffer
+Info: Nothing to build for FIFO_Buffer
+Info: Nothing to build for FIFO_Buffer
+20:13:03 **** Incremental Build of configuration Debug for project FIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o fifo.o "..\\fifo.c" 
+..\fifo.c: In function 'FIFO_print':
+..\fifo.c:78:30: warning: format '%x' expects argument of type 'unsigned int', but argument 3 has type 'uint8 * {aka unsigned char *}' [-Wformat=]
+   printf("\t element(%x) = (%x)\n",i+1, (fifo->tail+i));
+                              ^
+gcc -o FIFO_Buffer.exe fifo.o main.o 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file FIFO_Buffer.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+20:13:28 **** Incremental Build of configuration Debug for project FIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -o FIFO_Buffer.exe fifo.o main.o 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file FIFO_Buffer.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+20:13:37 **** Incremental Build of configuration Debug for project FIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -o FIFO_Buffer.exe fifo.o main.o 
+Info: Nothing to build for FIFO_Buffer
+20:16:00 **** Incremental Build of configuration Debug for project FIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o fifo.o "..\\fifo.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o FIFO_Buffer.exe fifo.o main.o 
+20:16:39 **** Incremental Build of configuration Debug for project FIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o fifo.o "..\\fifo.c" 
+gcc -o FIFO_Buffer.exe fifo.o main.o 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file FIFO_Buffer.exe: Invalid argument
+collect2.exe: error: ld returned 1 exit status
+20:17:43 **** Incremental Build of configuration Debug for project FIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -o FIFO_Buffer.exe fifo.o main.o 
+Info: Nothing to build for FIFO_Buffer
+20:21:35 **** Incremental Build of configuration Debug for project FIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o fifo.o "..\\fifo.c" 
+..\fifo.c: In function 'FIFO_print':
+..\fifo.c:79:106: error: expected ')' before ';' token
+   x = (( (fifo->tail - fifo->base) + (i * sizeof(element_type)) ) % (fifo->length * sizeof(element_type));
+                                                                                                          ^
+..\fifo.c:81:2: error: expected ';' before '}' token
+  }
+  ^
+..\fifo.c:77:6: warning: variable 'x' set but not used [-Wunused-but-set-variable]
+  int x;
+      ^
+20:21:56 **** Incremental Build of configuration Debug for project FIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o fifo.o "..\\fifo.c" 
+gcc -o FIFO_Buffer.exe fifo.o main.o 
+20:22:02 **** Incremental Build of configuration Debug for project FIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o fifo.o "..\\fifo.c" 
+gcc -o FIFO_Buffer.exe fifo.o main.o 
+20:22:41 **** Incremental Build of configuration Debug for project FIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o FIFO_Buffer.exe fifo.o main.o 
+20:23:03 **** Incremental Build of configuration Debug for project FIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o FIFO_Buffer.exe fifo.o main.o 
+20:23:31 **** Incremental Build of configuration Debug for project FIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o FIFO_Buffer.exe fifo.o main.o 
+20:24:29 **** Incremental Build of configuration Debug for project FIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o FIFO_Buffer.exe fifo.o main.o 
+20:24:53 **** Incremental Build of configuration Debug for project FIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c: In function 'main':
+..\main.c:43:2: error: expected ';' before 'printf'
+  printf("FIFO enqueue (%x):\n",i*2);
+  ^~~~~~
+20:24:59 **** Incremental Build of configuration Debug for project FIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o FIFO_Buffer.exe fifo.o main.o 
+Info: Nothing to build for FIFO_Buffer
+20:29:26 **** Incremental Build of configuration Debug for project FIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o fifo.o "..\\fifo.c" 
+gcc -o FIFO_Buffer.exe fifo.o main.o 
+20:31:15 **** Incremental Build of configuration Debug for project FIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o fifo.o "..\\fifo.c" 
+gcc -o FIFO_Buffer.exe fifo.o main.o 
+20:34:40 **** Incremental Build of configuration Debug for project FIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c: In function 'main':
+..\main.c:19:26: warning: format '%x' expects argument of type 'unsigned int', but argument 2 has type 'long unsigned int' [-Wformat=]
+   printf("FIFO enqueue (%x):\n",i*2);
+                          ^
+..\main.c:30:29: warning: format '%x' expects argument of type 'unsigned int', but argument 2 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+   printf("\t FIFO dequeue (%x)\n", temp);
+                             ^
+..\main.c:37:29: warning: format '%x' expects argument of type 'unsigned int', but argument 2 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+   printf("\t FIFO dequeue (%x)\n", temp);
+                             ^
+..\main.c:43:25: warning: format '%x' expects argument of type 'unsigned int', but argument 2 has type 'long unsigned int' [-Wformat=]
+  printf("FIFO enqueue (%x):\n",i*2);
+                         ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o fifo.o "..\\fifo.c" 
+..\fifo.c: In function 'FIFO_print':
+..\fifo.c:87:30: warning: format '%x' expects argument of type 'unsigned int', but argument 3 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+   printf("\t element(%x) = (%x)\n",(x/sizeof(element_type)) , *(fifo->base + x));
+                              ^
+gcc -o FIFO_Buffer.exe fifo.o main.o 
+20:36:25 **** Incremental Build of configuration Debug for project FIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o fifo.o "..\\fifo.c" 
+..\fifo.c: In function 'FIFO_print':
+..\fifo.c:88:30: warning: format '%x' expects argument of type 'unsigned int', but argument 3 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+   printf("\t element(%x) = (%x)\n",(x/sizeof(element_type)) , *(fifo->base + x));
+                              ^
+gcc -o FIFO_Buffer.exe fifo.o main.o 
+20:36:45 **** Incremental Build of configuration Debug for project FIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o fifo.o "..\\fifo.c" 
+..\fifo.c: In function 'FIFO_print':
+..\fifo.c:88:30: warning: format '%x' expects argument of type 'unsigned int', but argument 3 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+   printf("\t element(%x) = (%x)\n",(x/sizeof(element_type)) , *(fifo->base + x));
+                              ^
+gcc -o FIFO_Buffer.exe fifo.o main.o 
+20:37:30 **** Incremental Build of configuration Debug for project FIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c: In function 'main':
+..\main.c:19:26: warning: format '%x' expects argument of type 'unsigned int', but argument 2 has type 'long unsigned int' [-Wformat=]
+   printf("FIFO enqueue (%x):\n",i*2);
+                          ^
+..\main.c:30:29: warning: format '%x' expects argument of type 'unsigned int', but argument 2 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+   printf("\t FIFO dequeue (%x)\n", temp);
+                             ^
+..\main.c:37:29: warning: format '%x' expects argument of type 'unsigned int', but argument 2 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+   printf("\t FIFO dequeue (%x)\n", temp);
+                             ^
+..\main.c:43:25: warning: format '%x' expects argument of type 'unsigned int', but argument 2 has type 'long unsigned int' [-Wformat=]
+  printf("FIFO enqueue (%x):\n",i*2);
+                         ^
+gcc -o FIFO_Buffer.exe fifo.o main.o 
+20:40:35 **** Incremental Build of configuration Debug for project FIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o fifo.o "..\\fifo.c" 
+..\fifo.c: In function 'FIFO_print':
+..\fifo.c:88:30: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+   printf("\t element(%d) = (%d)\n",(x/sizeof(element_type)) , *(fifo->base + x));
+                              ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c: In function 'main':
+..\main.c:19:26: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+   printf("FIFO enqueue (%d):\n",i*2);
+                          ^
+..\main.c:30:29: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+   printf("\t FIFO dequeue (%d)\n", temp);
+                             ^
+..\main.c:37:29: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+   printf("\t FIFO dequeue (%d)\n", temp);
+                             ^
+..\main.c:43:25: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+  printf("FIFO enqueue (%d):\n",i*2);
+                         ^
+gcc -o FIFO_Buffer.exe fifo.o main.o 
+20:43:46 **** Incremental Build of configuration Debug for project FIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o fifo.o "..\\fifo.c" 
+In file included from ..\fifo.c:8:0:
+..\fifo.h:37:53: warning: parameter 2 ('item') has void type
+ FIFO_Buf_status FIFO_enqueue(FIFO_Buf_t* fifo, void item);
+                                                     ^~~~
+..\fifo.c:26:17: error: conflicting types for 'FIFO_enqueue'
+ FIFO_Buf_status FIFO_enqueue(FIFO_Buf_t* fifo, element_type item){
+                 ^~~~~~~~~~~~
+In file included from ..\fifo.c:8:0:
+..\fifo.h:37:17: note: previous declaration of 'FIFO_enqueue' was here
+ FIFO_Buf_status FIFO_enqueue(FIFO_Buf_t* fifo, void item);
+                 ^~~~~~~~~~~~
+..\fifo.c: In function 'FIFO_enqueue':
+..\fifo.c:36:2: warning: dereferencing 'void *' pointer
+  *(fifo->head) = item;
+  ^~~~~~~~~~~~~
+..\fifo.c:36:2: error: invalid use of void expression
+  *(fifo->head) = item;
+  ^
+..\fifo.c: At top level:
+..\fifo.c:44:17: error: conflicting types for 'FIFO_dequeue'
+ FIFO_Buf_status FIFO_dequeue(FIFO_Buf_t* fifo, element_type* item){
+                 ^~~~~~~~~~~~
+In file included from ..\fifo.c:8:0:
+..\fifo.h:38:17: note: previous declaration of 'FIFO_dequeue' was here
+ FIFO_Buf_status FIFO_dequeue(FIFO_Buf_t* fifo, void* item);
+                 ^~~~~~~~~~~~
+..\fifo.c: In function 'FIFO_dequeue':
+..\fifo.c:54:10: warning: dereferencing 'void *' pointer
+  *item = *(fifo->tail);
+          ^~~~~~~~~~~~~
+..\fifo.c:54:8: error: void value not ignored as it ought to be
+  *item = *(fifo->tail);
+        ^
+..\fifo.c: In function 'FIFO_print':
+..\fifo.c:88:63: warning: dereferencing 'void *' pointer
+   printf("\t element(%d) = (%d)\n",(x/sizeof(element_type)) , *(fifo->base + x));
+                                                               ^~~~~~~~~~~~~~~~~
+..\fifo.c:88:3: error: invalid use of void expression
+   printf("\t element(%d) = (%d)\n",(x/sizeof(element_type)) , *(fifo->base + x));
+   ^~~~~~
+20:44:11 **** Incremental Build of configuration Debug for project FIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o fifo.o "..\\fifo.c" 
+In file included from ..\fifo.c:8:0:
+..\fifo.h:37:53: warning: parameter 2 ('item') has void type
+ FIFO_Buf_status FIFO_enqueue(FIFO_Buf_t* fifo, void item);
+                                                     ^~~~
+..\fifo.c:26:17: error: conflicting types for 'FIFO_enqueue'
+ FIFO_Buf_status FIFO_enqueue(FIFO_Buf_t* fifo, element_type item){
+                 ^~~~~~~~~~~~
+In file included from ..\fifo.c:8:0:
+..\fifo.h:37:17: note: previous declaration of 'FIFO_enqueue' was here
+ FIFO_Buf_status FIFO_enqueue(FIFO_Buf_t* fifo, void item);
+                 ^~~~~~~~~~~~
+..\fifo.c: In function 'FIFO_enqueue':
+..\fifo.c:36:2: warning: dereferencing 'void *' pointer
+  *(fifo->head) = item;
+  ^~~~~~~~~~~~~
+..\fifo.c:36:2: error: invalid use of void expression
+  *(fifo->head) = item;
+  ^
+..\fifo.c: At top level:
+..\fifo.c:44:17: error: conflicting types for 'FIFO_dequeue'
+ FIFO_Buf_status FIFO_dequeue(FIFO_Buf_t* fifo, element_type* item){
+                 ^~~~~~~~~~~~
+In file included from ..\fifo.c:8:0:
+..\fifo.h:38:17: note: previous declaration of 'FIFO_dequeue' was here
+ FIFO_Buf_status FIFO_dequeue(FIFO_Buf_t* fifo, void* item);
+                 ^~~~~~~~~~~~
+..\fifo.c: In function 'FIFO_dequeue':
+..\fifo.c:54:10: warning: dereferencing 'void *' pointer
+  *item = *(fifo->tail);
+          ^~~~~~~~~~~~~
+..\fifo.c:54:8: error: void value not ignored as it ought to be
+  *item = *(fifo->tail);
+        ^
+..\fifo.c: In function 'FIFO_print':
+..\fifo.c:88:63: warning: dereferencing 'void *' pointer
+   printf("\t element(%d) = (%d)\n",(x/sizeof(element_type)) , *(fifo->base + x));
+                                                               ^~~~~~~~~~~~~~~~~
+..\fifo.c:88:3: error: invalid use of void expression
+   printf("\t element(%d) = (%d)\n",(x/sizeof(element_type)) , *(fifo->base + x));
+   ^~~~~~
+20:45:02 **** Incremental Build of configuration Debug for project FIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o fifo.o "..\\fifo.c" 
+..\fifo.c: In function 'FIFO_print':
+..\fifo.c:88:30: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+   printf("\t element(%d) = (%d)\n",(x/sizeof(element_type)) , *(fifo->base + x));
+                              ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c: In function 'main':
+..\main.c:19:26: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+   printf("FIFO enqueue (%d):\n",i*2);
+                          ^
+..\main.c:30:29: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+   printf("\t FIFO dequeue (%d)\n", temp);
+                             ^
+..\main.c:37:29: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+   printf("\t FIFO dequeue (%d)\n", temp);
+                             ^
+..\main.c:43:25: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+  printf("FIFO enqueue (%d):\n",i*2);
+                         ^
+gcc -o FIFO_Buffer.exe fifo.o main.o 
+01:21:24 **** Rebuild of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+In file included from ..\main.c:8:0:
+..\students.h:24:2: error: unknown type name 'SStudent'
+  SStudent* PNextStudent;
+  ^~~~~~~~
+..\main.c: In function 'main':
+..\main.c:32:4: warning: implicit declaration of function 'ViewStudents' [-Wimplicit-function-declaration]
+    ViewStudents();
+    ^~~~~~~~~~~~
+01:22:30 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o students.o "..\\students.c" 
+In file included from ..\students.c:8:0:
+..\students.h:24:2: error: unknown type name 'SStudent'
+  SStudent* PNextStudent;
+  ^~~~~~~~
+..\students.h:25:1: warning: useless storage class specifier in empty declaration
+ };
+ ^
+..\students.h:27:1: error: unknown type name 'SStudent'
+ SStudent* gpFirstStudent = NULL;
+ ^~~~~~~~
+..\students.h:27:1: note: use 'struct' keyword to refer to the type
+..\students.h:29:22: error: unknown type name 'SStudent'
+ void Fill_the_record(SStudent* new_student);
+                      ^~~~~~~~
+..\students.c:10:22: error: unknown type name 'SStudent'
+ void Fill_the_record(SStudent* new_student){
+                      ^~~~~~~~
+..\students.c: In function 'AddStudnet':
+..\students.c:28:2: error: unknown type name 'SStudent'
+  SStudent* pNewStudent;
+  ^~~~~~~~
+..\students.c:28:2: note: use 'struct' keyword to refer to the type
+..\students.c:33:18: error: 'SStudent' undeclared (first use in this function)
+   pNewStudent = (SStudent*) malloc ( sizeof(SStudent) );
+                  ^~~~~~~~
+..\students.c:33:18: note: each undeclared identifier is reported only once for each function it appears in
+..\students.c:33:27: error: expected expression before ')' token
+   pNewStudent = (SStudent*) malloc ( sizeof(SStudent) );
+                           ^
+..\students.c:39:20: error: request for member 'PNextStudent' in something not a structure or union
+   while(pNewStudent->PNextStudent){
+                    ^~
+..\students.c:41:29: error: request for member 'PNextStudent' in something not a structure or union
+    pNewStudent = pNewStudent->PNextStudent;
+                             ^~
+..\students.c:44:14: error: request for member 'PNextStudent' in something not a structure or union
+   pNewStudent->PNextStudent = (SStudent*) malloc ( sizeof(SStudent) );
+              ^~
+..\students.c:44:41: error: expected expression before ')' token
+   pNewStudent->PNextStudent = (SStudent*) malloc ( sizeof(SStudent) );
+                                         ^
+..\students.c:46:28: error: request for member 'PNextStudent' in something not a structure or union
+   pNewStudent = pNewStudent->PNextStudent;
+                            ^~
+..\students.c:49:2: warning: implicit declaration of function 'Fill_the_record' [-Wimplicit-function-declaration]
+  Fill_the_record(&pNewStudent);
+  ^~~~~~~~~~~~~~~
+..\students.c:51:13: error: request for member 'PNextStudent' in something not a structure or union
+  pNewStudent->PNextStudent = NULL;
+             ^~
+..\students.c: In function 'DeleteStudent':
+..\students.c:69:3: error: unknown type name 'SStudent'
+   SStudent* pSelectedStudent = gpFirstStudent;
+   ^~~~~~~~
+..\students.c:69:3: note: use 'struct' keyword to refer to the type
+..\students.c:70:3: error: unknown type name 'SStudent'
+   SStudent* pPreviousStudent = NULL;
+   ^~~~~~~~
+..\students.c:70:3: note: use 'struct' keyword to refer to the type
+..\students.c:74:23: error: request for member 'Student_Data' in something not a structure or union
+    if(pSelectedStudent->Student_Data.ID == selected_id)
+                       ^~
+..\students.c:77:39: error: request for member 'PNextStudent' in something not a structure or union
+      gpFirstStudent = pSelectedStudent->PNextStudent;
+                                       ^~
+..\students.c:79:22: error: request for member 'PNextStudent' in something not a structure or union
+      pPreviousStudent->PNextStudent = pSelectedStudent->PNextStudent;
+                      ^~
+..\students.c:79:55: error: request for member 'PNextStudent' in something not a structure or union
+      pPreviousStudent->PNextStudent = pSelectedStudent->PNextStudent;
+                                                       ^~
+..\students.c:86:39: error: request for member 'PNextStudent' in something not a structure or union
+    pSelectedStudent = pSelectedStudent->PNextStudent;
+                                       ^~
+..\students.c:57:19: warning: unused variable 'i' [-Wunused-variable]
+  int selected_id, i;
+                   ^
+..\students.c: In function 'ViewStudents':
+..\students.c:96:2: error: unknown type name 'SStudent'
+  SStudent* pSelectedStudent = gpFirstStudent;
+  ^~~~~~~~
+..\students.c:96:2: note: use 'struct' keyword to refer to the type
+In file included from ..\students.c:8:0:
+..\students.c:108:38: error: request for member 'Student_Data' in something not a structure or union
+   DPRINT("\n ID: %d",pSelectedStudent->Student_Data.ID)
+                                      ^
+..\students.h:13:28: note: in definition of macro 'DPRINT'
+ #define DPRINT(...) printf(__VA_ARGS__);\
+                            ^~~~~~~~~~~
+..\students.c:109:40: error: request for member 'Student_Data' in something not a structure or union
+   DPRINT("\n Name: %s",pSelectedStudent->Student_Data.name)
+                                        ^
+..\students.h:13:28: note: in definition of macro 'DPRINT'
+ #define DPRINT(...) printf(__VA_ARGS__);\
+                            ^~~~~~~~~~~
+..\students.c:110:42: error: request for member 'Student_Data' in something not a structure or union
+   DPRINT("\n Height: %f",pSelectedStudent->Student_Data.height)
+                                          ^
+..\students.h:13:28: note: in definition of macro 'DPRINT'
+ #define DPRINT(...) printf(__VA_ARGS__);\
+                            ^~~~~~~~~~~
+..\students.c:112:38: error: request for member 'PNextStudent' in something not a structure or union
+   pSelectedStudent = pSelectedStudent->PNextStudent;
+                                      ^~
+..\students.c: In function 'DeleteAll':
+..\students.c:121:2: error: unknown type name 'SStudent'
+  SStudent* pCurrentStudent = gpFirstStudent;
+  ^~~~~~~~
+..\students.c:121:2: note: use 'struct' keyword to refer to the type
+..\students.c:122:2: error: unknown type name 'SStudent'
+  SStudent* pTempStudent = NULL;
+  ^~~~~~~~
+..\students.c:122:2: note: use 'struct' keyword to refer to the type
+..\students.c:132:36: error: request for member 'PNextStudent' in something not a structure or union
+   pCurrentStudent = pCurrentStudent->PNextStudent;
+                                    ^~
+01:22:59 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o students.o "..\\students.c" 
+In file included from ..\students.c:8:0:
+..\students.h:24:2: error: unknown type name 'SStudent'
+  SStudent* PNextStudent;
+  ^~~~~~~~
+..\students.c: In function 'AddStudnet':
+..\students.c:41:16: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+    pNewStudent = pNewStudent->PNextStudent;
+                ^
+..\students.c:44:29: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+   pNewStudent->PNextStudent = (SStudent*) malloc ( sizeof(SStudent) );
+                             ^
+..\students.c:46:15: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+   pNewStudent = pNewStudent->PNextStudent;
+               ^
+..\students.c:49:18: warning: passing argument 1 of 'Fill_the_record' from incompatible pointer type [-Wincompatible-pointer-types]
+  Fill_the_record(&pNewStudent);
+                  ^
+..\students.c:10:6: note: expected 'SStudent * {aka struct Student *}' but argument is of type 'SStudent ** {aka struct Student **}'
+ void Fill_the_record(SStudent* new_student){
+      ^~~~~~~~~~~~~~~
+..\students.c: In function 'DeleteStudent':
+..\students.c:77:21: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+      gpFirstStudent = pSelectedStudent->PNextStudent;
+                     ^
+..\students.c:86:21: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+    pSelectedStudent = pSelectedStudent->PNextStudent;
+                     ^
+..\students.c:57:19: warning: unused variable 'i' [-Wunused-variable]
+  int selected_id, i;
+                   ^
+..\students.c: In function 'ViewStudents':
+..\students.c:112:20: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+   pSelectedStudent = pSelectedStudent->PNextStudent;
+                    ^
+..\students.c: In function 'DeleteAll':
+..\students.c:132:19: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+   pCurrentStudent = pCurrentStudent->PNextStudent;
+                   ^
+01:23:07 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o students.o "..\\students.c" 
+..\students.c: In function 'AddStudnet':
+..\students.c:49:18: warning: passing argument 1 of 'Fill_the_record' from incompatible pointer type [-Wincompatible-pointer-types]
+  Fill_the_record(&pNewStudent);
+                  ^
+..\students.c:10:6: note: expected 'SStudent * {aka struct Student *}' but argument is of type 'SStudent ** {aka struct Student **}'
+ void Fill_the_record(SStudent* new_student){
+      ^~~~~~~~~~~~~~~
+..\students.c: In function 'DeleteStudent':
+..\students.c:57:19: warning: unused variable 'i' [-Wunused-variable]
+  int selected_id, i;
+                   ^
+gcc -o LinkedList_Students_Project.exe main.o students.o 
+students.o:students.c:(.bss+0x0): multiple definition of `gpFirstStudent'
+main.o:main.c:(.bss+0x0): first defined here
+main.o: In function `main':
+E:\Courses\Embedded System KS\Units\Unit 4 (System Architecture)\Lesson1\codes\LinkedList_Students_Project\Debug/../main.c:26: undefined reference to `AddStudent'
+collect2.exe: error: ld returned 1 exit status
+01:24:21 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o students.o "..\\students.c" 
+gcc -o LinkedList_Students_Project.exe main.o students.o 
+students.o:students.c:(.bss+0x0): multiple definition of `gpFirstStudent'
+main.o:main.c:(.bss+0x0): first defined here
+main.o: In function `main':
+E:\Courses\Embedded System KS\Units\Unit 4 (System Architecture)\Lesson1\codes\LinkedList_Students_Project\Debug/../main.c:26: undefined reference to `AddStudent'
+collect2.exe: error: ld returned 1 exit status
+01:25:28 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o students.o "..\\students.c" 
+gcc -o LinkedList_Students_Project.exe main.o students.o 
+students.o:students.c:(.bss+0x0): multiple definition of `gpFirstStudent'
+main.o:main.c:(.bss+0x0): first defined here
+main.o: In function `main':
+E:\Courses\Embedded System KS\Units\Unit 4 (System Architecture)\Lesson1\codes\LinkedList_Students_Project\Debug/../main.c:26: undefined reference to `AddStudent'
+collect2.exe: error: ld returned 1 exit status
+01:25:57 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o LinkedList_Students_Project.exe main.o students.o 
+students.o:students.c:(.bss+0x0): multiple definition of `gpFirstStudent'
+main.o:main.c:(.bss+0x0): first defined here
+main.o: In function `main':
+E:\Courses\Embedded System KS\Units\Unit 4 (System Architecture)\Lesson1\codes\LinkedList_Students_Project\Debug/../main.c:27: undefined reference to `AddStudent'
+collect2.exe: error: ld returned 1 exit status
+01:27:09 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o students.o "..\\students.c" 
+gcc -o LinkedList_Students_Project.exe main.o students.o 
+students.o:students.c:(.bss+0x0): multiple definition of `gpFirstStudent'
+main.o:main.c:(.bss+0x0): first defined here
+collect2.exe: error: ld returned 1 exit status
+01:27:59 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o students.o "..\\students.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o LinkedList_Students_Project.exe main.o students.o 
+students.o:students.c:(.bss+0x0): multiple definition of `gpFirstStudent'
+main.o:main.c:(.bss+0x0): first defined here
+collect2.exe: error: ld returned 1 exit status
+01:31:40 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o students.o "..\\students.c" 
+gcc -o LinkedList_Students_Project.exe main.o students.o 
+Info: Nothing to build for LinkedList_Students_Project
+01:33:21 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o students.o "..\\students.c" 
+gcc -o LinkedList_Students_Project.exe main.o students.o 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file LinkedList_Students_Project.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+01:34:39 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -o LinkedList_Students_Project.exe main.o students.o 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file LinkedList_Students_Project.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+01:35:11 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -o LinkedList_Students_Project.exe main.o students.o 
+01:38:00 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o students.o "..\\students.c" 
+gcc -o LinkedList_Students_Project.exe main.o students.o 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file LinkedList_Students_Project.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+01:38:07 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -o LinkedList_Students_Project.exe main.o students.o 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file LinkedList_Students_Project.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+01:38:13 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -o LinkedList_Students_Project.exe main.o students.o 
+01:38:40 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o LinkedList_Students_Project.exe main.o students.o 
+01:41:31 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o students.o "..\\students.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o LinkedList_Students_Project.exe main.o students.o 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file LinkedList_Students_Project.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+01:41:39 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -o LinkedList_Students_Project.exe main.o students.o 
+01:44:27 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o students.o "..\\students.c" 
+gcc -o LinkedList_Students_Project.exe main.o students.o 
+02:43:05 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o students.o "..\\students.c" 
+In file included from ..\students.c:8:0:
+..\students.c: In function 'GetNth':
+..\students.c:164:9: warning: format '%d' expects argument of type 'int', but argument 5 has type 'double' [-Wformat=]
+  DPRINT("\n Target Student with index (%d) has\n ID = %d, name = %s, height = %d\n",n,pCurrentStudent->Student_Data.ID, pCurrentStudent->Student_Data.name, pCurrentStudent->Student_Data.height);
+         ^
+..\students.h:16:28: note: in definition of macro 'DPRINT'
+ #define DPRINT(...) printf(__VA_ARGS__);\
+                            ^~~~~~~~~~~
+..\students.c: In function 'getCount':
+..\students.c:172:9: error: too few arguments to function 'getCount'
+  return getCount(pCurrentStudent->PNextStudent)+1;
+         ^~~~~~~~
+..\students.c:169:12: note: declared here
+ static int getCount(SStudent* gpFirstStudent,SStudent* pCurrentStudent){
+            ^~~~~~~~
+..\students.c: In function 'ListLength':
+..\students.c:176:9: error: too few arguments to function 'getCount'
+  return getCount(gpFirstStudent);
+         ^~~~~~~~
+..\students.c:169:12: note: declared here
+ static int getCount(SStudent* gpFirstStudent,SStudent* pCurrentStudent){
+            ^~~~~~~~
+..\students.c: In function 'GetNth_ByBack':
+..\students.c:195:15: error: incompatible types when assigning to type 'SStudent {aka struct Student}' from type 'SStudent * {aka struct Student *}'
+  pLastStudent = gpFirstStudent;
+               ^
+..\students.c:198:30: error: invalid type argument of '->' (have 'SStudent {aka struct Student}')
+   pLastStudent = pLastStudent->PNextStudent;
+                              ^~
+..\students.c:200:7: error: wrong type argument to unary exclamation mark
+   if (!pLastStudent) {
+       ^
+..\students.c:205:20: error: invalid type argument of '->' (have 'SStudent {aka struct Student}')
+  while(pLastStudent->PNextStudent){
+                    ^~
+..\students.c:206:30: error: invalid type argument of '->' (have 'SStudent {aka struct Student}')
+   pLastStudent = pLastStudent->PNextStudent;
+                              ^~
+In file included from ..\students.c:8:0:
+..\students.c:209:9: warning: format '%d' expects argument of type 'int', but argument 5 has type 'double' [-Wformat=]
+  DPRINT("\n Target Student with index (%d) has\n ID = %d, name = %s, height = %d\n",n,pCurrentStudent->Student_Data.ID, pCurrentStudent->Student_Data.name, pCurrentStudent->Student_Data.height);
+         ^
+..\students.h:16:28: note: in definition of macro 'DPRINT'
+ #define DPRINT(...) printf(__VA_ARGS__);\
+                            ^~~~~~~~~~~
+..\students.c: In function 'GetMiddle':
+..\students.c:225:15: error: incompatible types when assigning to type 'SStudent {aka struct Student}' from type 'SStudent * {aka struct Student *}'
+  pFastStudent = gpFirstStudent;
+               ^
+..\students.c:227:8: error: used struct type value where scalar is required
+  while(pFastStudent && pFastStudent->PNextStudent){
+        ^~~~~~~~~~~~
+..\students.c:227:36: error: invalid type argument of '->' (have 'SStudent {aka struct Student}')
+  while(pFastStudent && pFastStudent->PNextStudent){
+                                    ^~
+..\students.c:228:30: error: invalid type argument of '->' (have 'SStudent {aka struct Student}')
+   pFastStudent = pFastStudent->PNextStudent->PNextStudent;
+                              ^~
+..\students.c: In function 'CheckLoop':
+..\students.c:244:15: error: incompatible types when assigning to type 'SStudent {aka struct Student}' from type 'SStudent * {aka struct Student *}'
+  pFastStudent = gpFirstStudent;
+               ^
+..\students.c:246:8: error: used struct type value where scalar is required
+  while(pFastStudent && pFastStudent->PNextStudent){
+        ^~~~~~~~~~~~
+..\students.c:246:36: error: invalid type argument of '->' (have 'SStudent {aka struct Student}')
+  while(pFastStudent && pFastStudent->PNextStudent){
+                                    ^~
+..\students.c:247:30: error: invalid type argument of '->' (have 'SStudent {aka struct Student}')
+   pFastStudent = pFastStudent->PNextStudent->PNextStudent;
+                              ^~
+..\students.c:249:20: error: invalid operands to binary == (have 'SStudent {aka struct Student}' and 'SStudent * {aka struct Student *}')
+   if (pFastStudent == pSlowStudent) {
+                    ^~
+..\students.c: In function 'ReverseList':
+..\students.c:265:11: error: incompatible types when assigning to type 'SStudent {aka struct Student}' from type 'SStudent * {aka struct Student *}'
+  pCurrent = gpFirstStudent;
+           ^
+..\students.c:266:9: error: used struct type value where scalar is required
+  while (pCurrent)
+         ^~~~~~~~
+..\students.c:268:19: error: invalid type argument of '->' (have 'SStudent {aka struct Student}')
+   pNext = pCurrent->PNextStudent;
+                   ^~
+..\students.c:269:11: error: invalid type argument of '->' (have 'SStudent {aka struct Student}')
+   pCurrent->PNextStudent = pPrev;
+           ^~
+..\students.c:270:9: error: incompatible types when assigning to type 'SStudent * {aka struct Student *}' from type 'SStudent {aka struct Student}'
+   pPrev = pCurrent;
+         ^
+..\students.c: In function 'getCount':
+..\students.c:173:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+..\students.c: In function 'ListLength':
+..\students.c:177:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+02:43:39 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o students.o "..\\students.c" 
+In file included from ..\students.c:8:0:
+..\students.c: In function 'GetNth':
+..\students.c:164:9: warning: format '%d' expects argument of type 'int', but argument 5 has type 'double' [-Wformat=]
+  DPRINT("\n Target Student with index (%d) has\n ID = %d, name = %s, height = %d\n",n,pCurrentStudent->Student_Data.ID, pCurrentStudent->Student_Data.name, pCurrentStudent->Student_Data.height);
+         ^
+..\students.h:16:28: note: in definition of macro 'DPRINT'
+ #define DPRINT(...) printf(__VA_ARGS__);\
+                            ^~~~~~~~~~~
+..\students.c: In function 'GetNth_ByBack':
+..\students.c:195:15: error: incompatible types when assigning to type 'SStudent {aka struct Student}' from type 'SStudent * {aka struct Student *}'
+  pLastStudent = gpFirstStudent;
+               ^
+..\students.c:198:30: error: invalid type argument of '->' (have 'SStudent {aka struct Student}')
+   pLastStudent = pLastStudent->PNextStudent;
+                              ^~
+..\students.c:200:7: error: wrong type argument to unary exclamation mark
+   if (!pLastStudent) {
+       ^
+..\students.c:205:20: error: invalid type argument of '->' (have 'SStudent {aka struct Student}')
+  while(pLastStudent->PNextStudent){
+                    ^~
+..\students.c:206:30: error: invalid type argument of '->' (have 'SStudent {aka struct Student}')
+   pLastStudent = pLastStudent->PNextStudent;
+                              ^~
+In file included from ..\students.c:8:0:
+..\students.c:209:9: warning: format '%d' expects argument of type 'int', but argument 5 has type 'double' [-Wformat=]
+  DPRINT("\n Target Student with index (%d) has\n ID = %d, name = %s, height = %d\n",n,pCurrentStudent->Student_Data.ID, pCurrentStudent->Student_Data.name, pCurrentStudent->Student_Data.height);
+         ^
+..\students.h:16:28: note: in definition of macro 'DPRINT'
+ #define DPRINT(...) printf(__VA_ARGS__);\
+                            ^~~~~~~~~~~
+..\students.c: In function 'GetMiddle':
+..\students.c:225:15: error: incompatible types when assigning to type 'SStudent {aka struct Student}' from type 'SStudent * {aka struct Student *}'
+  pFastStudent = gpFirstStudent;
+               ^
+..\students.c:227:8: error: used struct type value where scalar is required
+  while(pFastStudent && pFastStudent->PNextStudent){
+        ^~~~~~~~~~~~
+..\students.c:227:36: error: invalid type argument of '->' (have 'SStudent {aka struct Student}')
+  while(pFastStudent && pFastStudent->PNextStudent){
+                                    ^~
+..\students.c:228:30: error: invalid type argument of '->' (have 'SStudent {aka struct Student}')
+   pFastStudent = pFastStudent->PNextStudent->PNextStudent;
+                              ^~
+..\students.c: In function 'CheckLoop':
+..\students.c:244:15: error: incompatible types when assigning to type 'SStudent {aka struct Student}' from type 'SStudent * {aka struct Student *}'
+  pFastStudent = gpFirstStudent;
+               ^
+..\students.c:246:8: error: used struct type value where scalar is required
+  while(pFastStudent && pFastStudent->PNextStudent){
+        ^~~~~~~~~~~~
+..\students.c:246:36: error: invalid type argument of '->' (have 'SStudent {aka struct Student}')
+  while(pFastStudent && pFastStudent->PNextStudent){
+                                    ^~
+..\students.c:247:30: error: invalid type argument of '->' (have 'SStudent {aka struct Student}')
+   pFastStudent = pFastStudent->PNextStudent->PNextStudent;
+                              ^~
+..\students.c:249:20: error: invalid operands to binary == (have 'SStudent {aka struct Student}' and 'SStudent * {aka struct Student *}')
+   if (pFastStudent == pSlowStudent) {
+                    ^~
+..\students.c: In function 'ReverseList':
+..\students.c:265:11: error: incompatible types when assigning to type 'SStudent {aka struct Student}' from type 'SStudent * {aka struct Student *}'
+  pCurrent = gpFirstStudent;
+           ^
+..\students.c:266:9: error: used struct type value where scalar is required
+  while (pCurrent)
+         ^~~~~~~~
+..\students.c:268:19: error: invalid type argument of '->' (have 'SStudent {aka struct Student}')
+   pNext = pCurrent->PNextStudent;
+                   ^~
+..\students.c:269:11: error: invalid type argument of '->' (have 'SStudent {aka struct Student}')
+   pCurrent->PNextStudent = pPrev;
+           ^~
+..\students.c:270:9: error: incompatible types when assigning to type 'SStudent * {aka struct Student *}' from type 'SStudent {aka struct Student}'
+   pPrev = pCurrent;
+         ^
+02:44:14 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o students.o "..\\students.c" 
+In file included from ..\students.c:8:0:
+..\students.c: In function 'GetNth':
+..\students.c:164:9: warning: format '%d' expects argument of type 'int', but argument 5 has type 'double' [-Wformat=]
+  DPRINT("\n Target Student with index (%d) has\n ID = %d, name = %s, height = %d\n",n,pCurrentStudent->Student_Data.ID, pCurrentStudent->Student_Data.name, pCurrentStudent->Student_Data.height);
+         ^
+..\students.h:16:28: note: in definition of macro 'DPRINT'
+ #define DPRINT(...) printf(__VA_ARGS__);\
+                            ^~~~~~~~~~~
+..\students.c: In function 'GetNth_ByBack':
+..\students.c:209:9: warning: format '%d' expects argument of type 'int', but argument 5 has type 'double' [-Wformat=]
+  DPRINT("\n Target Student with index (%d) has\n ID = %d, name = %s, height = %d\n",n,pCurrentStudent->Student_Data.ID, pCurrentStudent->Student_Data.name, pCurrentStudent->Student_Data.height);
+         ^
+..\students.h:16:28: note: in definition of macro 'DPRINT'
+ #define DPRINT(...) printf(__VA_ARGS__);\
+                            ^~~~~~~~~~~
+..\students.c: In function 'GetMiddle':
+..\students.c:225:15: error: incompatible types when assigning to type 'SStudent {aka struct Student}' from type 'SStudent * {aka struct Student *}'
+  pFastStudent = gpFirstStudent;
+               ^
+..\students.c:227:8: error: used struct type value where scalar is required
+  while(pFastStudent && pFastStudent->PNextStudent){
+        ^~~~~~~~~~~~
+..\students.c:227:36: error: invalid type argument of '->' (have 'SStudent {aka struct Student}')
+  while(pFastStudent && pFastStudent->PNextStudent){
+                                    ^~
+..\students.c:228:30: error: invalid type argument of '->' (have 'SStudent {aka struct Student}')
+   pFastStudent = pFastStudent->PNextStudent->PNextStudent;
+                              ^~
+..\students.c: In function 'CheckLoop':
+..\students.c:244:15: error: incompatible types when assigning to type 'SStudent {aka struct Student}' from type 'SStudent * {aka struct Student *}'
+  pFastStudent = gpFirstStudent;
+               ^
+..\students.c:246:8: error: used struct type value where scalar is required
+  while(pFastStudent && pFastStudent->PNextStudent){
+        ^~~~~~~~~~~~
+..\students.c:246:36: error: invalid type argument of '->' (have 'SStudent {aka struct Student}')
+  while(pFastStudent && pFastStudent->PNextStudent){
+                                    ^~
+..\students.c:247:30: error: invalid type argument of '->' (have 'SStudent {aka struct Student}')
+   pFastStudent = pFastStudent->PNextStudent->PNextStudent;
+                              ^~
+..\students.c:249:20: error: invalid operands to binary == (have 'SStudent {aka struct Student}' and 'SStudent * {aka struct Student *}')
+   if (pFastStudent == pSlowStudent) {
+                    ^~
+..\students.c: In function 'ReverseList':
+..\students.c:265:11: error: incompatible types when assigning to type 'SStudent {aka struct Student}' from type 'SStudent * {aka struct Student *}'
+  pCurrent = gpFirstStudent;
+           ^
+..\students.c:266:9: error: used struct type value where scalar is required
+  while (pCurrent)
+         ^~~~~~~~
+..\students.c:268:19: error: invalid type argument of '->' (have 'SStudent {aka struct Student}')
+   pNext = pCurrent->PNextStudent;
+                   ^~
+..\students.c:269:11: error: invalid type argument of '->' (have 'SStudent {aka struct Student}')
+   pCurrent->PNextStudent = pPrev;
+           ^~
+..\students.c:270:9: error: incompatible types when assigning to type 'SStudent * {aka struct Student *}' from type 'SStudent {aka struct Student}'
+   pPrev = pCurrent;
+         ^
+02:44:22 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c: In function 'main':
+..\main.c:59:14: error: expected expression before 'SStudent'
+    CheckLoop(SStudent* gpFirstStudent);
+              ^~~~~~~~
+02:44:38 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o students.o "..\\students.c" 
+In file included from ..\students.c:8:0:
+..\students.c: In function 'GetNth':
+..\students.c:164:9: warning: format '%d' expects argument of type 'int', but argument 5 has type 'double' [-Wformat=]
+  DPRINT("\n Target Student with index (%d) has\n ID = %d, name = %s, height = %d\n",n,pCurrentStudent->Student_Data.ID, pCurrentStudent->Student_Data.name, pCurrentStudent->Student_Data.height);
+         ^
+..\students.h:16:28: note: in definition of macro 'DPRINT'
+ #define DPRINT(...) printf(__VA_ARGS__);\
+                            ^~~~~~~~~~~
+..\students.c: In function 'GetNth_ByBack':
+..\students.c:209:9: warning: format '%d' expects argument of type 'int', but argument 5 has type 'double' [-Wformat=]
+  DPRINT("\n Target Student with index (%d) has\n ID = %d, name = %s, height = %d\n",n,pCurrentStudent->Student_Data.ID, pCurrentStudent->Student_Data.name, pCurrentStudent->Student_Data.height);
+         ^
+..\students.h:16:28: note: in definition of macro 'DPRINT'
+ #define DPRINT(...) printf(__VA_ARGS__);\
+                            ^~~~~~~~~~~
+..\students.c: In function 'GetMiddle':
+..\students.c:225:15: error: incompatible types when assigning to type 'SStudent {aka struct Student}' from type 'SStudent * {aka struct Student *}'
+  pFastStudent = gpFirstStudent;
+               ^
+..\students.c:227:8: error: used struct type value where scalar is required
+  while(pFastStudent && pFastStudent->PNextStudent){
+        ^~~~~~~~~~~~
+..\students.c:227:36: error: invalid type argument of '->' (have 'SStudent {aka struct Student}')
+  while(pFastStudent && pFastStudent->PNextStudent){
+                                    ^~
+..\students.c:228:30: error: invalid type argument of '->' (have 'SStudent {aka struct Student}')
+   pFastStudent = pFastStudent->PNextStudent->PNextStudent;
+                              ^~
+..\students.c: In function 'CheckLoop':
+..\students.c:244:15: error: incompatible types when assigning to type 'SStudent {aka struct Student}' from type 'SStudent * {aka struct Student *}'
+  pFastStudent = gpFirstStudent;
+               ^
+..\students.c:246:8: error: used struct type value where scalar is required
+  while(pFastStudent && pFastStudent->PNextStudent){
+        ^~~~~~~~~~~~
+..\students.c:246:36: error: invalid type argument of '->' (have 'SStudent {aka struct Student}')
+  while(pFastStudent && pFastStudent->PNextStudent){
+                                    ^~
+..\students.c:247:30: error: invalid type argument of '->' (have 'SStudent {aka struct Student}')
+   pFastStudent = pFastStudent->PNextStudent->PNextStudent;
+                              ^~
+..\students.c:249:20: error: invalid operands to binary == (have 'SStudent {aka struct Student}' and 'SStudent * {aka struct Student *}')
+   if (pFastStudent == pSlowStudent) {
+                    ^~
+..\students.c: In function 'ReverseList':
+..\students.c:265:11: error: incompatible types when assigning to type 'SStudent {aka struct Student}' from type 'SStudent * {aka struct Student *}'
+  pCurrent = gpFirstStudent;
+           ^
+..\students.c:266:9: error: used struct type value where scalar is required
+  while (pCurrent)
+         ^~~~~~~~
+..\students.c:268:19: error: invalid type argument of '->' (have 'SStudent {aka struct Student}')
+   pNext = pCurrent->PNextStudent;
+                   ^~
+..\students.c:269:11: error: invalid type argument of '->' (have 'SStudent {aka struct Student}')
+   pCurrent->PNextStudent = pPrev;
+           ^~
+..\students.c:270:9: error: incompatible types when assigning to type 'SStudent * {aka struct Student *}' from type 'SStudent {aka struct Student}'
+   pPrev = pCurrent;
+         ^
+02:45:54 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o students.o "..\\students.c" 
+In file included from ..\students.c:8:0:
+..\students.c: In function 'GetNth':
+..\students.c:164:9: warning: format '%d' expects argument of type 'int', but argument 5 has type 'double' [-Wformat=]
+  DPRINT("\n Target Student with index (%d) has\n ID = %d, name = %s, height = %d\n",n,pCurrentStudent->Student_Data.ID, pCurrentStudent->Student_Data.name, pCurrentStudent->Student_Data.height);
+         ^
+..\students.h:16:28: note: in definition of macro 'DPRINT'
+ #define DPRINT(...) printf(__VA_ARGS__);\
+                            ^~~~~~~~~~~
+..\students.c: In function 'GetNth_ByBack':
+..\students.c:209:9: warning: format '%d' expects argument of type 'int', but argument 5 has type 'double' [-Wformat=]
+  DPRINT("\n Target Student with index (%d) has\n ID = %d, name = %s, height = %d\n",n,pCurrentStudent->Student_Data.ID, pCurrentStudent->Student_Data.name, pCurrentStudent->Student_Data.height);
+         ^
+..\students.h:16:28: note: in definition of macro 'DPRINT'
+ #define DPRINT(...) printf(__VA_ARGS__);\
+                            ^~~~~~~~~~~
+..\students.c: In function 'CheckLoop':
+..\students.c:243:15: error: incompatible types when assigning to type 'SStudent {aka struct Student}' from type 'SStudent * {aka struct Student *}'
+  pFastStudent = gpFirstStudent;
+               ^
+..\students.c:245:8: error: used struct type value where scalar is required
+  while(pFastStudent && pFastStudent->PNextStudent){
+        ^~~~~~~~~~~~
+..\students.c:245:36: error: invalid type argument of '->' (have 'SStudent {aka struct Student}')
+  while(pFastStudent && pFastStudent->PNextStudent){
+                                    ^~
+..\students.c:246:30: error: invalid type argument of '->' (have 'SStudent {aka struct Student}')
+   pFastStudent = pFastStudent->PNextStudent->PNextStudent;
+                              ^~
+..\students.c:248:20: error: invalid operands to binary == (have 'SStudent {aka struct Student}' and 'SStudent * {aka struct Student *}')
+   if (pFastStudent == pSlowStudent) {
+                    ^~
+..\students.c: In function 'ReverseList':
+..\students.c:264:11: error: incompatible types when assigning to type 'SStudent {aka struct Student}' from type 'SStudent * {aka struct Student *}'
+  pCurrent = gpFirstStudent;
+           ^
+..\students.c:265:9: error: used struct type value where scalar is required
+  while (pCurrent)
+         ^~~~~~~~
+..\students.c:267:19: error: invalid type argument of '->' (have 'SStudent {aka struct Student}')
+   pNext = pCurrent->PNextStudent;
+                   ^~
+..\students.c:268:11: error: invalid type argument of '->' (have 'SStudent {aka struct Student}')
+   pCurrent->PNextStudent = pPrev;
+           ^~
+..\students.c:269:9: error: incompatible types when assigning to type 'SStudent * {aka struct Student *}' from type 'SStudent {aka struct Student}'
+   pPrev = pCurrent;
+         ^
+02:46:11 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o students.o "..\\students.c" 
+In file included from ..\students.c:8:0:
+..\students.c: In function 'GetNth':
+..\students.c:164:9: warning: format '%d' expects argument of type 'int', but argument 5 has type 'double' [-Wformat=]
+  DPRINT("\n Target Student with index (%d) has\n ID = %d, name = %s, height = %d\n",n,pCurrentStudent->Student_Data.ID, pCurrentStudent->Student_Data.name, pCurrentStudent->Student_Data.height);
+         ^
+..\students.h:16:28: note: in definition of macro 'DPRINT'
+ #define DPRINT(...) printf(__VA_ARGS__);\
+                            ^~~~~~~~~~~
+..\students.c: In function 'GetNth_ByBack':
+..\students.c:209:9: warning: format '%d' expects argument of type 'int', but argument 5 has type 'double' [-Wformat=]
+  DPRINT("\n Target Student with index (%d) has\n ID = %d, name = %s, height = %d\n",n,pCurrentStudent->Student_Data.ID, pCurrentStudent->Student_Data.name, pCurrentStudent->Student_Data.height);
+         ^
+..\students.h:16:28: note: in definition of macro 'DPRINT'
+ #define DPRINT(...) printf(__VA_ARGS__);\
+                            ^~~~~~~~~~~
+..\students.c: In function 'ReverseList':
+..\students.c:263:11: error: incompatible types when assigning to type 'SStudent {aka struct Student}' from type 'SStudent * {aka struct Student *}'
+  pCurrent = gpFirstStudent;
+           ^
+..\students.c:264:9: error: used struct type value where scalar is required
+  while (pCurrent)
+         ^~~~~~~~
+..\students.c:266:19: error: invalid type argument of '->' (have 'SStudent {aka struct Student}')
+   pNext = pCurrent->PNextStudent;
+                   ^~
+..\students.c:267:11: error: invalid type argument of '->' (have 'SStudent {aka struct Student}')
+   pCurrent->PNextStudent = pPrev;
+           ^~
+..\students.c:268:9: error: incompatible types when assigning to type 'SStudent * {aka struct Student *}' from type 'SStudent {aka struct Student}'
+   pPrev = pCurrent;
+         ^
+02:46:23 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o students.o "..\\students.c" 
+In file included from ..\students.c:8:0:
+..\students.c: In function 'GetNth':
+..\students.c:164:9: warning: format '%d' expects argument of type 'int', but argument 5 has type 'double' [-Wformat=]
+  DPRINT("\n Target Student with index (%d) has\n ID = %d, name = %s, height = %d\n",n,pCurrentStudent->Student_Data.ID, pCurrentStudent->Student_Data.name, pCurrentStudent->Student_Data.height);
+         ^
+..\students.h:16:28: note: in definition of macro 'DPRINT'
+ #define DPRINT(...) printf(__VA_ARGS__);\
+                            ^~~~~~~~~~~
+..\students.c: In function 'GetNth_ByBack':
+..\students.c:209:9: warning: format '%d' expects argument of type 'int', but argument 5 has type 'double' [-Wformat=]
+  DPRINT("\n Target Student with index (%d) has\n ID = %d, name = %s, height = %d\n",n,pCurrentStudent->Student_Data.ID, pCurrentStudent->Student_Data.name, pCurrentStudent->Student_Data.height);
+         ^
+..\students.h:16:28: note: in definition of macro 'DPRINT'
+ #define DPRINT(...) printf(__VA_ARGS__);\
+                            ^~~~~~~~~~~
+gcc -o LinkedList_Students_Project.exe main.o students.o 
+02:47:03 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o students.o "..\\students.c" 
+In file included from ..\students.c:8:0:
+..\students.c: In function 'GetNth':
+..\students.c:164:9: warning: format '%d' expects argument of type 'int', but argument 5 has type 'double' [-Wformat=]
+  DPRINT("\n Target Student with index (%d) has\n ID = %d, name = %s, height = %d\n",n,pCurrentStudent->Student_Data.ID, pCurrentStudent->Student_Data.name, pCurrentStudent->Student_Data.height);
+         ^
+..\students.h:16:28: note: in definition of macro 'DPRINT'
+ #define DPRINT(...) printf(__VA_ARGS__);\
+                            ^~~~~~~~~~~
+gcc -o LinkedList_Students_Project.exe main.o students.o 
+Info: Nothing to build for LinkedList_Students_Project
+02:47:13 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o students.o "..\\students.c" 
+gcc -o LinkedList_Students_Project.exe main.o students.o 
+02:50:54 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o LinkedList_Students_Project.exe main.o students.o 
+Info: Nothing to build for LinkedList_Students_Project
+02:52:16 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o students.o "..\\students.c" 
+..\students.c: In function 'ReverseList':
+..\students.c:271:18: error: incompatible types when assigning to type 'SStudent {aka struct Student}' from type 'SStudent * {aka struct Student *}'
+  *gpFirstStudent = pPrev;
+                  ^
+02:52:53 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c: In function 'main':
+..\main.c:67:16: warning: passing argument 1 of 'ReverseList' from incompatible pointer type [-Wincompatible-pointer-types]
+    ReverseList(&gpFirstStudent);
+                ^
+In file included from ..\main.c:8:0:
+..\students.h:44:6: note: expected 'SStudent * {aka struct Student *}' but argument is of type 'SStudent ** {aka struct Student **}'
+ void ReverseList(SStudent* gpFirstStudent);
+      ^~~~~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o students.o "..\\students.c" 
+..\students.c:256:6: error: conflicting types for 'ReverseList'
+ void ReverseList(SStudent** gpFirstStudent){
+      ^~~~~~~~~~~
+In file included from ..\students.c:8:0:
+..\students.h:44:6: note: previous declaration of 'ReverseList' was here
+ void ReverseList(SStudent* gpFirstStudent);
+      ^~~~~~~~~~~
+..\students.c: In function 'ReverseList':
+..\students.c:263:11: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+  pCurrent = gpFirstStudent;
+           ^
+02:53:08 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o students.o "..\\students.c" 
+..\students.c: In function 'ReverseList':
+..\students.c:263:11: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+  pCurrent = gpFirstStudent;
+           ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o LinkedList_Students_Project.exe main.o students.o 
+02:53:27 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o students.o "..\\students.c" 
+gcc -o LinkedList_Students_Project.exe main.o students.o 
+Info: Nothing to build for LinkedList_Students_Project
+02:55:10 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o students.o "..\\students.c" 
+gcc -o LinkedList_Students_Project.exe main.o students.o 
+03:01:29 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o students.o "..\\students.c" 
+In file included from ..\students.c:8:0:
+..\students.c: In function 'GetMiddle':
+..\students.c:232:80: error: 'n' undeclared (first use in this function)
+  DPRINT("\n Target Student in Middle has:\n ID = %d, name = %s, height = %f\n",n,pCurrentStudent->Student_Data.ID, pCurrentStudent->Student_Data.name, pCurrentStudent->Student_Data.height);
+                                                                                ^
+..\students.h:16:28: note: in definition of macro 'DPRINT'
+ #define DPRINT(...) printf(__VA_ARGS__);\
+                            ^~~~~~~~~~~
+..\students.c:232:80: note: each undeclared identifier is reported only once for each function it appears in
+  DPRINT("\n Target Student in Middle has:\n ID = %d, name = %s, height = %f\n",n,pCurrentStudent->Student_Data.ID, pCurrentStudent->Student_Data.name, pCurrentStudent->Student_Data.height);
+                                                                                ^
+..\students.h:16:28: note: in definition of macro 'DPRINT'
+ #define DPRINT(...) printf(__VA_ARGS__);\
+                            ^~~~~~~~~~~
+03:02:05 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o students.o "..\\students.c" 
+gcc -o LinkedList_Students_Project.exe main.o students.o 
+Info: Nothing to build for LinkedList_Students_Project
+03:07:08 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c: In function 'main':
+..\main.c:18:11: warning: unused variable 's5' [-Wunused-variable]
+  SStudent s5 =  {{5, "Marko", 173.0}, &s4};
+           ^~
+gcc -o LinkedList_Students_Project.exe main.o students.o 
+03:07:17 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o LinkedList_Students_Project.exe main.o students.o 
+Info: Nothing to build for LinkedList_Students_Project
+03:35:28 **** Incremental Build of configuration Debug for project FIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o fifo.o "..\\fifo.c" 
+..\fifo.c: In function 'FIFO_print':
+..\fifo.c:88:30: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+   printf("\t element(%d) = (%d)\n",(x/sizeof(element_type)) , *(fifo->base + x));
+                              ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c: In function 'main':
+..\main.c:19:26: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+   printf("FIFO enqueue (%d):\n",i*2);
+                          ^
+..\main.c:30:29: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+   printf("\t FIFO dequeue (%d)\n", temp);
+                             ^
+..\main.c:37:29: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+   printf("\t FIFO dequeue (%d)\n", temp);
+                             ^
+..\main.c:43:25: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+  printf("FIFO enqueue (%d):\n",i*2);
+                         ^
+gcc -o FIFO_Buffer.exe fifo.o main.o 
+03:39:00 **** Incremental Build of configuration Debug for project LIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c: In function 'main':
+..\main.c:29:23: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+     printf("pop item %d\n",temp);
+                       ^
+gcc -o LIFO_Buffer.exe lifo.o main.o 
+03:43:48 **** Incremental Build of configuration Debug for project LIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c: In function 'main':
+..\main.c:33:22: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+   printf("pop item (%d)\n",temp);
+                      ^
+..\main.c:36:26: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+    printf("\t LIFO pop (%d)\n", temp);
+                          ^
+gcc -o LIFO_Buffer.exe lifo.o main.o 
+03:45:49 **** Incremental Build of configuration Debug for project LIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c: In function 'main':
+..\main.c:33:22: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+   printf("pop item (%d)\n",temp);
+                      ^
+..\main.c:36:26: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+    printf("\t LIFO pop (%d)\n", temp);
+                          ^
+gcc -o LIFO_Buffer.exe lifo.o main.o 
+03:46:15 **** Incremental Build of configuration Debug for project LIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c: In function 'main':
+..\main.c:35:26: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+    printf("\t LIFO pop (%d)\n", temp);
+                          ^
+gcc -o LIFO_Buffer.exe lifo.o main.o 
+03:46:56 **** Incremental Build of configuration Debug for project LIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c: In function 'main':
+..\main.c:35:26: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+    printf("\t LIFO pop (%d)\n", temp);
+                          ^
+gcc -o LIFO_Buffer.exe lifo.o main.o 
+03:50:54 **** Incremental Build of configuration Debug for project LIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o lifo.o "..\\lifo.c" 
+..\lifo.c:49:1: error: unknown type name 'LIFO_Buf_status'
+ LIFO_Buf_status LIFO_print(LIFO_Buf_t* lifo){
+ ^~~~~~~~~~~~~~~
+..\lifo.c: In function 'LIFO_print':
+..\lifo.c:62:14: error: 'LIFO_Buf_t {aka struct <anonymous>}' has no member named 'tail'
+   x = ( (lifo->tail - lifo->base) + (i * sizeof(uint32)) ) % (lifo->length * sizeof(uint32));
+              ^~
+..\lifo.c:63:30: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+   printf("\t element(%d) = (%d)\n",(x/sizeof(uint32)) , *(lifo->base + x));
+                              ^
+03:51:51 **** Incremental Build of configuration Debug for project LIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o lifo.o "..\\lifo.c" 
+In file included from ..\lifo.c:8:0:
+..\lifo.h:30:1: error: unknown type name 'LIFO_status'
+ LIFO_status LIFO_Push_Item(LIFO_Buf_t* lifo_buf, uint32 item);
+ ^~~~~~~~~~~
+..\lifo.h:31:1: error: unknown type name 'LIFO_status'
+ LIFO_status LIFO_Pop_Item(LIFO_Buf_t* lifo_buf, uint32* item);
+ ^~~~~~~~~~~
+..\lifo.h:32:1: error: unknown type name 'LIFO_status'
+ LIFO_status LIFO_Init(LIFO_Buf_t* lifo_buf, uint32* buf, uint32 length);
+ ^~~~~~~~~~~
+..\lifo.c:10:1: error: unknown type name 'LIFO_status'
+ LIFO_status LIFO_Init(LIFO_Buf_t* lifo_buf, uint32* buf, uint32 length){
+ ^~~~~~~~~~~
+..\lifo.c:22:1: error: unknown type name 'LIFO_status'
+ LIFO_status LIFO_Push_Item(LIFO_Buf_t* lifo_buf, uint32 item){
+ ^~~~~~~~~~~
+..\lifo.c:37:1: error: unknown type name 'LIFO_status'
+ LIFO_status LIFO_Pop_Item(LIFO_Buf_t* lifo_buf, uint32* item){
+ ^~~~~~~~~~~
+..\lifo.c: In function 'LIFO_print':
+..\lifo.c:62:14: error: 'LIFO_Buf_t {aka struct <anonymous>}' has no member named 'tail'
+   x = ( (lifo->tail - lifo->base) + (i * sizeof(uint32)) ) % (lifo->length * sizeof(uint32));
+              ^~
+..\lifo.c:63:30: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+   printf("\t element(%d) = (%d)\n",(x/sizeof(uint32)) , *(lifo->base + x));
+                              ^
+03:52:36 **** Incremental Build of configuration Debug for project LIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o lifo.o "..\\lifo.c" 
+In file included from ..\lifo.c:8:0:
+..\lifo.h:30:1: error: unknown type name 'LIFO_status'
+ LIFO_status LIFO_Push_Item(LIFO_Buf_t* lifo_buf, uint32 item);
+ ^~~~~~~~~~~
+..\lifo.h:31:1: error: unknown type name 'LIFO_status'
+ LIFO_status LIFO_Pop_Item(LIFO_Buf_t* lifo_buf, uint32* item);
+ ^~~~~~~~~~~
+..\lifo.h:32:1: error: unknown type name 'LIFO_status'
+ LIFO_status LIFO_Init(LIFO_Buf_t* lifo_buf, uint32* buf, uint32 length);
+ ^~~~~~~~~~~
+..\lifo.c:10:1: error: unknown type name 'LIFO_status'
+ LIFO_status LIFO_Init(LIFO_Buf_t* lifo_buf, uint32* buf, uint32 length){
+ ^~~~~~~~~~~
+..\lifo.c:22:1: error: unknown type name 'LIFO_status'
+ LIFO_status LIFO_Push_Item(LIFO_Buf_t* lifo_buf, uint32 item){
+ ^~~~~~~~~~~
+..\lifo.c:37:1: error: unknown type name 'LIFO_status'
+ LIFO_status LIFO_Pop_Item(LIFO_Buf_t* lifo_buf, uint32* item){
+ ^~~~~~~~~~~
+..\lifo.c: In function 'LIFO_print':
+..\lifo.c:62:14: error: 'LIFO_Buf_t {aka struct <anonymous>}' has no member named 'tail'
+   x = ( (lifo->tail - lifo->base) + (i * sizeof(uint32)) ) % (lifo->length * sizeof(uint32));
+              ^~
+..\lifo.c:63:30: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+   printf("\t element(%d) = (%d)\n",(x/sizeof(uint32)) , *(lifo->base + x));
+                              ^
+03:52:54 **** Incremental Build of configuration Debug for project LIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+In file included from ..\main.c:8:0:
+..\lifo.h:30:1: error: unknown type name 'lifo_buffer_status'
+ lifo_buffer_status LIFO_Push_Item(LIFO_Buf_t* lifo_buf, uint32 item);
+ ^~~~~~~~~~~~~~~~~~
+..\lifo.h:31:1: error: unknown type name 'lifo_buffer_status'
+ lifo_buffer_status LIFO_Pop_Item(LIFO_Buf_t* lifo_buf, uint32* item);
+ ^~~~~~~~~~~~~~~~~~
+..\lifo.h:32:1: error: unknown type name 'lifo_buffer_status'
+ lifo_buffer_status LIFO_Init(LIFO_Buf_t* lifo_buf, uint32* buf, uint32 length);
+ ^~~~~~~~~~~~~~~~~~
+..\main.c: In function 'main':
+..\main.c:31:2: warning: implicit declaration of function 'LIFO_print' [-Wimplicit-function-declaration]
+  LIFO_print(uart_lifo);
+  ^~~~~~~~~~
+..\main.c:36:26: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+    printf("\t LIFO pop (%d)\n", temp);
+                          ^
+03:53:41 **** Incremental Build of configuration Debug for project LIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+In file included from ..\main.c:8:0:
+..\lifo.h:30:1: error: unknown type name 'lifo_buffer_status'
+ lifo_buffer_status LIFO_Push_Item(LIFO_Buf_t* lifo_buf, uint32 item);
+ ^~~~~~~~~~~~~~~~~~
+..\lifo.h:31:1: error: unknown type name 'lifo_buffer_status'
+ lifo_buffer_status LIFO_Pop_Item(LIFO_Buf_t* lifo_buf, uint32* item);
+ ^~~~~~~~~~~~~~~~~~
+..\lifo.h:32:1: error: unknown type name 'lifo_buffer_status'
+ lifo_buffer_status LIFO_Init(LIFO_Buf_t* lifo_buf, uint32* buf, uint32 length);
+ ^~~~~~~~~~~~~~~~~~
+..\main.c: In function 'main':
+..\main.c:31:2: warning: implicit declaration of function 'LIFO_print' [-Wimplicit-function-declaration]
+  LIFO_print(uart_lifo);
+  ^~~~~~~~~~
+..\main.c:36:26: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+    printf("\t LIFO pop (%d)\n", temp);
+                          ^
+03:54:16 **** Incremental Build of configuration Debug for project LIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+In file included from ..\main.c:8:0:
+..\lifo.h:30:1: error: unknown type name 'lifo_buffer_status'
+ lifo_buffer_status LIFO_Push_Item(LIFO_Buf_t* lifo_buf, uint32 item);
+ ^~~~~~~~~~~~~~~~~~
+..\lifo.h:31:1: error: unknown type name 'lifo_buffer_status'
+ lifo_buffer_status LIFO_Pop_Item(LIFO_Buf_t* lifo_buf, uint32* item);
+ ^~~~~~~~~~~~~~~~~~
+..\lifo.h:32:1: error: unknown type name 'lifo_buffer_status'
+ lifo_buffer_status LIFO_Init(LIFO_Buf_t* lifo_buf, uint32* buf, uint32 length);
+ ^~~~~~~~~~~~~~~~~~
+..\main.c: In function 'main':
+..\main.c:31:2: warning: implicit declaration of function 'LIFO_print' [-Wimplicit-function-declaration]
+  LIFO_print(uart_lifo);
+  ^~~~~~~~~~
+..\main.c:36:26: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+    printf("\t LIFO pop (%d)\n", temp);
+                          ^
+03:54:44 **** Incremental Build of configuration Debug for project LIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o lifo.o "..\\lifo.c" 
+..\lifo.c:10:1: error: unknown type name 'lifo_buffer_status'
+ lifo_buffer_status LIFO_Init(LIFO_Buf_t* lifo_buf, uint32* buf, uint32 length){
+ ^~~~~~~~~~~~~~~~~~
+..\lifo.c:10:20: error: conflicting types for 'LIFO_Init'
+ lifo_buffer_status LIFO_Init(LIFO_Buf_t* lifo_buf, uint32* buf, uint32 length){
+                    ^~~~~~~~~
+In file included from ..\lifo.c:8:0:
+..\lifo.h:32:20: note: previous declaration of 'LIFO_Init' was here
+ LIFO_buffer_status LIFO_Init(LIFO_Buf_t* lifo_buf, uint32* buf, uint32 length);
+                    ^~~~~~~~~
+..\lifo.c:22:1: error: unknown type name 'lifo_buffer_status'
+ lifo_buffer_status LIFO_Push_Item(LIFO_Buf_t* lifo_buf, uint32 item){
+ ^~~~~~~~~~~~~~~~~~
+..\lifo.c:22:20: error: conflicting types for 'LIFO_Push_Item'
+ lifo_buffer_status LIFO_Push_Item(LIFO_Buf_t* lifo_buf, uint32 item){
+                    ^~~~~~~~~~~~~~
+In file included from ..\lifo.c:8:0:
+..\lifo.h:30:20: note: previous declaration of 'LIFO_Push_Item' was here
+ LIFO_buffer_status LIFO_Push_Item(LIFO_Buf_t* lifo_buf, uint32 item);
+                    ^~~~~~~~~~~~~~
+..\lifo.c:37:1: error: unknown type name 'lifo_buffer_status'
+ lifo_buffer_status LIFO_Pop_Item(LIFO_Buf_t* lifo_buf, uint32* item){
+ ^~~~~~~~~~~~~~~~~~
+..\lifo.c:37:20: error: conflicting types for 'LIFO_Pop_Item'
+ lifo_buffer_status LIFO_Pop_Item(LIFO_Buf_t* lifo_buf, uint32* item){
+                    ^~~~~~~~~~~~~
+In file included from ..\lifo.c:8:0:
+..\lifo.h:31:20: note: previous declaration of 'LIFO_Pop_Item' was here
+ LIFO_buffer_status LIFO_Pop_Item(LIFO_Buf_t* lifo_buf, uint32* item);
+                    ^~~~~~~~~~~~~
+..\lifo.c: In function 'LIFO_print':
+..\lifo.c:62:14: error: 'LIFO_Buf_t {aka struct <anonymous>}' has no member named 'tail'
+   x = ( (lifo->tail - lifo->base) + (i * sizeof(uint32)) ) % (lifo->length * sizeof(uint32));
+              ^~
+..\lifo.c:63:30: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+   printf("\t element(%d) = (%d)\n",(x/sizeof(uint32)) , *(lifo->base + x));
+                              ^
+03:54:59 **** Incremental Build of configuration Debug for project LIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o lifo.o "..\\lifo.c" 
+..\lifo.c: In function 'LIFO_print':
+..\lifo.c:62:14: error: 'LIFO_Buf_t {aka struct <anonymous>}' has no member named 'tail'
+   x = ( (lifo->tail - lifo->base) + (i * sizeof(uint32)) ) % (lifo->length * sizeof(uint32));
+              ^~
+..\lifo.c:63:30: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+   printf("\t element(%d) = (%d)\n",(x/sizeof(uint32)) , *(lifo->base + x));
+                              ^
+03:57:20 **** Incremental Build of configuration Debug for project LIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o lifo.o "..\\lifo.c" 
+..\lifo.c: In function 'LIFO_print':
+..\lifo.c:62:17: error: expected expression before 'LIFO_Buf_t'
+   LIFO_Pop_Item(LIFO_Buf_t,&item);
+                 ^~~~~~~~~~
+..\lifo.c:62:3: error: too few arguments to function 'LIFO_Pop_Item'
+   LIFO_Pop_Item(LIFO_Buf_t,&item);
+   ^~~~~~~~~~~~~
+..\lifo.c:37:20: note: declared here
+ LIFO_buffer_status LIFO_Pop_Item(LIFO_Buf_t* lifo_buf, uint32* item){
+                    ^~~~~~~~~~~~~
+..\lifo.c:63:23: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+   printf("\t element(%ul) = (%ul)\n",i , item);
+                       ^
+..\lifo.c:63:31: warning: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+   printf("\t element(%ul) = (%ul)\n",i , item);
+                               ^
+..\lifo.c:58:6: warning: unused variable 'x' [-Wunused-variable]
+  int x;
+      ^
+03:57:52 **** Incremental Build of configuration Debug for project LIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o lifo.o "..\\lifo.c" 
+..\lifo.c: In function 'LIFO_print':
+..\lifo.c:63:23: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+   printf("\t element(%ul) = (%ul)\n",i , item);
+                       ^
+..\lifo.c:63:31: warning: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+   printf("\t element(%ul) = (%ul)\n",i , item);
+                               ^
+..\lifo.c:58:6: warning: unused variable 'x' [-Wunused-variable]
+  int x;
+      ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c: In function 'main':
+..\main.c:31:2: warning: implicit declaration of function 'LIFO_print' [-Wimplicit-function-declaration]
+  LIFO_print(uart_lifo);
+  ^~~~~~~~~~
+..\main.c:36:26: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+    printf("\t LIFO pop (%d)\n", temp);
+                          ^
+gcc -o LIFO_Buffer.exe lifo.o main.o 
+Info: Nothing to build for LIFO_Buffer
+Info: Nothing to build for LIFO_Buffer
+Info: Nothing to build for LIFO_Buffer
+Info: Nothing to build for LIFO_Buffer
+03:59:16 **** Incremental Build of configuration Debug for project LIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c: In function 'main':
+..\main.c:36:26: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+    printf("\t LIFO pop (%d)\n", temp);
+                          ^
+gcc -o LIFO_Buffer.exe lifo.o main.o 
+Info: Nothing to build for LIFO_Buffer
+03:59:55 **** Incremental Build of configuration Debug for project LIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o lifo.o "..\\lifo.c" 
+..\lifo.c: In function 'LIFO_print':
+..\lifo.c:63:23: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+   printf("\t element(%d) = (%d)\n",i , item);
+                       ^
+..\lifo.c:63:30: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+   printf("\t element(%d) = (%d)\n",i , item);
+                              ^
+..\lifo.c:58:6: warning: unused variable 'x' [-Wunused-variable]
+  int x;
+      ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c: In function 'main':
+..\main.c:31:2: warning: implicit declaration of function 'LIFO_print' [-Wimplicit-function-declaration]
+  LIFO_print(uart_lifo);
+  ^~~~~~~~~~
+..\main.c:36:26: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+    printf("\t LIFO pop (%d)\n", temp);
+                          ^
+gcc -o LIFO_Buffer.exe lifo.o main.o 
+04:01:11 **** Incremental Build of configuration Debug for project LIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c: In function 'main':
+..\main.c:31:2: warning: implicit declaration of function 'LIFO_print' [-Wimplicit-function-declaration]
+  LIFO_print(&uart_lifo);
+  ^~~~~~~~~~
+..\main.c:36:26: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+    printf("\t LIFO pop (%d)\n", temp);
+                          ^
+gcc -o LIFO_Buffer.exe lifo.o main.o 
+Info: Nothing to build for LIFO_Buffer
+04:04:32 **** Incremental Build of configuration Debug for project LIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o lifo.o "..\\lifo.c" 
+..\lifo.c: In function 'LIFO_print':
+..\lifo.c:63:23: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+   printf("\t element(%d) = (%d)\n",i , item);
+                       ^
+..\lifo.c:63:30: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+   printf("\t element(%d) = (%d)\n",i , item);
+                              ^
+..\lifo.c:58:6: warning: unused variable 'x' [-Wunused-variable]
+  int x;
+      ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c: In function 'main':
+..\main.c:31:2: warning: implicit declaration of function 'LIFO_print' [-Wimplicit-function-declaration]
+  LIFO_print(&uart_lifo);
+  ^~~~~~~~~~
+..\main.c:36:26: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+    printf("\t LIFO pop (%d)\n", temp);
+                          ^
+gcc -o LIFO_Buffer.exe lifo.o main.o 
+Info: Nothing to build for LIFO_Buffer
+04:06:15 **** Incremental Build of configuration Debug for project LIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o lifo.o "..\\lifo.c" 
+..\lifo.c: In function 'LIFO_print':
+..\lifo.c:63:23: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+   printf("\t element(%d) = (%d)\n",i , *(lifo->head-(i+1)*sizeof(uint32)));
+                       ^
+..\lifo.c:63:30: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+   printf("\t element(%d) = (%d)\n",i , *(lifo->head-(i+1)*sizeof(uint32)));
+                              ^
+..\lifo.c:58:6: warning: unused variable 'x' [-Wunused-variable]
+  int x;
+      ^
+..\lifo.c:50:9: warning: unused variable 'item' [-Wunused-variable]
+  uint32 item,i;
+         ^~~~
+gcc -o LIFO_Buffer.exe lifo.o main.o 
+04:06:32 **** Incremental Build of configuration Debug for project LIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o lifo.o "..\\lifo.c" 
+..\lifo.c: In function 'LIFO_print':
+..\lifo.c:62:23: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+   printf("\t element(%d) = (%d)\n",i , *(lifo->head-(i+1)*sizeof(uint32)));
+                       ^
+..\lifo.c:62:30: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+   printf("\t element(%d) = (%d)\n",i , *(lifo->head-(i+1)*sizeof(uint32)));
+                              ^
+gcc -o LIFO_Buffer.exe lifo.o main.o 
+Info: Nothing to build for LIFO_Buffer
+04:07:55 **** Incremental Build of configuration Debug for project LIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o lifo.o "..\\lifo.c" 
+..\lifo.c: In function 'LIFO_print':
+..\lifo.c:62:40: error: invalid type argument of unary '*' (have 'int')
+   printf("\t element(%d) = (%d)\n",i , *(lifo->head-(uint32*)((i+1)*sizeof(uint32))));
+                                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+04:08:30 **** Incremental Build of configuration Debug for project LIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o lifo.o "..\\lifo.c" 
+..\lifo.c: In function 'LIFO_print':
+..\lifo.c:62:40: error: invalid type argument of unary '*' (have 'int')
+   printf("\t element(%d) = (%d)\n",i , *(lifo->head- ( (uint32*)((i+1)*sizeof(uint32))) ) );
+                                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+04:09:11 **** Incremental Build of configuration Debug for project LIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o lifo.o "..\\lifo.c" 
+..\lifo.c: In function 'LIFO_print':
+..\lifo.c:62:40: error: invalid type argument of unary '*' (have 'int')
+   printf("\t element(%d) = (%d)\n",i , *( lifo->head - ( (uint32*)((i+1)*sizeof(uint32))) ) );
+                                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+04:09:17 **** Incremental Build of configuration Debug for project LIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o lifo.o "..\\lifo.c" 
+..\lifo.c: In function 'LIFO_print':
+..\lifo.c:62:23: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+   printf("\t element(%d) = (%d)\n",i , ( lifo->head - ( (uint32*)((i+1)*sizeof(uint32))) ) );
+                       ^
+gcc -o LIFO_Buffer.exe lifo.o main.o 
+Info: Nothing to build for LIFO_Buffer
+04:10:48 **** Incremental Build of configuration Debug for project LIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o lifo.o "..\\lifo.c" 
+..\lifo.c: In function 'LIFO_print':
+..\lifo.c:61:16: warning: initialization makes pointer from integer without a cast [-Wint-conversion]
+   uint32* x =  lifo->head - ( (uint32*)((i+1)*sizeof(uint32)) );
+                ^~~~
+..\lifo.c:63:23: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+   printf("\t element(%d) = (%d)\n",i , 5);
+                       ^
+..\lifo.c:61:11: warning: unused variable 'x' [-Wunused-variable]
+   uint32* x =  lifo->head - ( (uint32*)((i+1)*sizeof(uint32)) );
+           ^
+gcc -o LIFO_Buffer.exe lifo.o main.o 
+Info: Nothing to build for LIFO_Buffer
+Info: Nothing to build for LIFO_Buffer
+04:12:02 **** Incremental Build of configuration Debug for project LIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o lifo.o "..\\lifo.c" 
+..\lifo.c: In function 'LIFO_print':
+..\lifo.c:62:23: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+   printf("\t element(%d) = (%d)\n",i , 5);
+                       ^
+gcc -o LIFO_Buffer.exe lifo.o main.o 
+Info: Nothing to build for LIFO_Buffer
+Info: Nothing to build for LIFO_Buffer
+04:14:03 **** Incremental Build of configuration Debug for project LIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o lifo.o "..\\lifo.c" 
+..\lifo.c: In function 'LIFO_print':
+..\lifo.c:62:23: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+   printf("\t element(%d) = (%d)\n", i , 5);
+                       ^
+gcc -o LIFO_Buffer.exe lifo.o main.o 
+04:14:16 **** Incremental Build of configuration Debug for project LIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o lifo.o "..\\lifo.c" 
+gcc -o LIFO_Buffer.exe lifo.o main.o 
+Info: Nothing to build for LIFO_Buffer
+04:14:43 **** Incremental Build of configuration Debug for project LIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c: In function 'main':
+..\main.c:31:2: warning: implicit declaration of function 'LIFO_print' [-Wimplicit-function-declaration]
+  LIFO_print(&uart_lifo);
+  ^~~~~~~~~~
+..\main.c:36:26: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+    printf("\t LIFO pop (%d)\n", temp);
+                          ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o lifo.o "..\\lifo.c" 
+..\lifo.c: In function 'LIFO_print':
+..\lifo.c:61:16: warning: initialization makes pointer from integer without a cast [-Wint-conversion]
+   uint32* x =  lifo->head - ( (uint32*)((i+1)*sizeof(uint32)) );
+                ^~~~
+..\lifo.c:62:30: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+   printf("\t element(%d) = (%d)\n", i , *x);
+                              ^
+gcc -o LIFO_Buffer.exe lifo.o main.o 
+04:15:05 **** Incremental Build of configuration Debug for project LIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o lifo.o "..\\lifo.c" 
+gcc -o LIFO_Buffer.exe lifo.o main.o 
+Info: Nothing to build for LIFO_Buffer
+04:15:37 **** Incremental Build of configuration Debug for project LIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o lifo.o "..\\lifo.c" 
+..\lifo.c: In function 'LIFO_print':
+..\lifo.c:61:11: warning: unused variable 'x' [-Wunused-variable]
+   uint32* x =  lifo->head - ( ((i+1)*sizeof(uint32)) );
+           ^
+gcc -o LIFO_Buffer.exe lifo.o main.o 
+04:15:44 **** Incremental Build of configuration Debug for project LIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o lifo.o "..\\lifo.c" 
+..\lifo.c: In function 'LIFO_print':
+..\lifo.c:62:30: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+   printf("\t element(%d) = (%d)\n", i , *x);
+                              ^
+gcc -o LIFO_Buffer.exe lifo.o main.o 
+Info: Nothing to build for LIFO_Buffer
+04:16:17 **** Incremental Build of configuration Debug for project LIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o lifo.o "..\\lifo.c" 
+..\lifo.c: In function 'LIFO_print':
+..\lifo.c:61:32: error: expected ',' or ';' before ')' token
+   uint32* x =  lifo->head - i-1);
+                                ^
+..\lifo.c:62:30: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+   printf("\t element(%d) = (%d)\n", i , *x);
+                              ^
+04:16:25 **** Incremental Build of configuration Debug for project LIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o lifo.o "..\\lifo.c" 
+..\lifo.c: In function 'LIFO_print':
+..\lifo.c:62:30: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+   printf("\t element(%d) = (%d)\n", i , *x);
+                              ^
+gcc -o LIFO_Buffer.exe lifo.o main.o 
+04:16:56 **** Incremental Build of configuration Debug for project LIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o lifo.o "..\\lifo.c" 
+..\lifo.c: In function 'LIFO_print':
+..\lifo.c:62:30: warning: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+   printf("\t element(%d) = (%ul) (%x)\n", i , *x, x);
+                              ^
+..\lifo.c:62:36: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'uint32 * {aka long unsigned int *}' [-Wformat=]
+   printf("\t element(%d) = (%ul) (%x)\n", i , *x, x);
+                                    ^
+gcc -o LIFO_Buffer.exe lifo.o main.o 
+Info: Nothing to build for LIFO_Buffer
+04:19:24 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o students.o "..\\students.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o LinkedList_Students_Project.exe main.o students.o 
+Info: Nothing to build for LinkedList_Students_Project
+Info: Nothing to build for LinkedList_Students_Project
+04:26:26 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o LinkedList_Students_Project.exe main.o students.o 
+04:26:48 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o LinkedList_Students_Project.exe main.o students.o 
+04:28:00 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o LinkedList_Students_Project.exe main.o students.o 
+04:28:19 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o LinkedList_Students_Project.exe main.o students.o 
+04:47:58 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o students.o "..\\students.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o LinkedList_Students_Project.exe main.o students.o 
+04:48:50 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o LinkedList_Students_Project.exe main.o students.o 
+Info: Nothing to build for LinkedList_Students_Project
+Info: Nothing to build for LinkedList_Students_Project
+Info: Nothing to build for LinkedList_Students_Project
+05:00:50 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o students.o "..\\students.c" 
+gcc -o LinkedList_Students_Project.exe main.o students.o 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file LinkedList_Students_Project.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+05:00:56 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -o LinkedList_Students_Project.exe main.o students.o 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file LinkedList_Students_Project.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+05:01:01 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -o LinkedList_Students_Project.exe main.o students.o 
+05:02:30 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o students.o "..\\students.c" 
+..\students.c:55:5: error: conflicting types for 'DeleteStudent'
+ int DeleteStudent(SStudent** gpFirstStudent)
+     ^~~~~~~~~~~~~
+In file included from ..\students.c:8:0:
+..\students.h:35:5: note: previous declaration of 'DeleteStudent' was here
+ int DeleteStudent(SStudent* gpFirstStudent);
+     ^~~~~~~~~~~~~
+..\students.c: In function 'DeleteStudent':
+..\students.c:70:32: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+   SStudent* pSelectedStudent = gpFirstStudent;
+                                ^~~~~~~~~~~~~~
+In file included from ..\students.c:8:0:
+..\students.c:80:13: warning: format '%d' expects a matching 'int' argument [-Wformat=]
+      DPRINT("First element, %d");
+             ^
+..\students.h:16:28: note: in definition of macro 'DPRINT'
+ #define DPRINT(...) printf(__VA_ARGS__);\
+                            ^~~~~~~~~~~
+05:02:44 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o students.o "..\\students.c" 
+..\students.c:55:5: error: conflicting types for 'DeleteStudent'
+ int DeleteStudent(SStudent** gpFirstStudent)
+     ^~~~~~~~~~~~~
+In file included from ..\students.c:8:0:
+..\students.h:35:5: note: previous declaration of 'DeleteStudent' was here
+ int DeleteStudent(SStudent* gpFirstStudent);
+     ^~~~~~~~~~~~~
+..\students.c: In function 'DeleteStudent':
+..\students.c:70:32: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+   SStudent* pSelectedStudent = gpFirstStudent;
+                                ^~~~~~~~~~~~~~
+05:03:28 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o students.o "..\\students.c" 
+..\students.c: In function 'DeleteStudent':
+..\students.c:70:32: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+   SStudent* pSelectedStudent = gpFirstStudent;
+                                ^~~~~~~~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o LinkedList_Students_Project.exe main.o students.o 
+05:03:48 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o students.o "..\\students.c" 
+gcc -o LinkedList_Students_Project.exe main.o students.o 
+Info: Nothing to build for LinkedList_Students_Project
+05:04:35 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o students.o "..\\students.c" 
+gcc -o LinkedList_Students_Project.exe main.o students.o 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file LinkedList_Students_Project.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+05:04:41 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -o LinkedList_Students_Project.exe main.o students.o 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file LinkedList_Students_Project.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+05:04:48 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -o LinkedList_Students_Project.exe main.o students.o 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file LinkedList_Students_Project.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+05:05:00 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -o LinkedList_Students_Project.exe main.o students.o 
+05:05:58 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o LinkedList_Students_Project.exe main.o students.o 
+Info: Nothing to build for LinkedList_Students_Project
+Info: Nothing to build for LinkedList_Students_Project
+05:07:04 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o LinkedList_Students_Project.exe main.o students.o 
+05:13:11 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c: In function 'main':
+..\main.c:52:14: warning: passing argument 1 of 'DeleteAll' from incompatible pointer type [-Wincompatible-pointer-types]
+    DeleteAll(gpFirstStudent);
+              ^~~~~~~~~~~~~~
+In file included from ..\main.c:8:0:
+..\students.h:37:6: note: expected 'SStudent ** {aka struct Student **}' but argument is of type 'SStudent * {aka struct Student *}'
+ void DeleteAll(SStudent** gpFirstStudent);
+      ^~~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o students.o "..\\students.c" 
+..\students.c:27:6: error: conflicting types for 'AddStudent'
+ void AddStudent(SStudent** gpFirstStudent ){
+      ^~~~~~~~~~
+In file included from ..\students.c:8:0:
+..\students.h:34:6: note: previous declaration of 'AddStudent' was here
+ void AddStudent(SStudent* gpFirstStudent);
+      ^~~~~~~~~~
+05:13:36 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c: In function 'main':
+..\main.c:43:15: warning: passing argument 1 of 'AddStudent' from incompatible pointer type [-Wincompatible-pointer-types]
+    AddStudent(gpFirstStudent);
+               ^~~~~~~~~~~~~~
+In file included from ..\main.c:8:0:
+..\students.h:34:6: note: expected 'SStudent ** {aka struct Student **}' but argument is of type 'SStudent * {aka struct Student *}'
+ void AddStudent(SStudent** gpFirstStudent);
+      ^~~~~~~~~~
+..\main.c:52:14: warning: passing argument 1 of 'DeleteAll' from incompatible pointer type [-Wincompatible-pointer-types]
+    DeleteAll(gpFirstStudent);
+              ^~~~~~~~~~~~~~
+In file included from ..\main.c:8:0:
+..\students.h:37:6: note: expected 'SStudent ** {aka struct Student **}' but argument is of type 'SStudent * {aka struct Student *}'
+ void DeleteAll(SStudent** gpFirstStudent);
+      ^~~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o students.o "..\\students.c" 
+gcc -o LinkedList_Students_Project.exe main.o students.o 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file LinkedList_Students_Project.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+05:14:16 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o LinkedList_Students_Project.exe main.o students.o 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file LinkedList_Students_Project.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+05:14:28 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -o LinkedList_Students_Project.exe main.o students.o 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file LinkedList_Students_Project.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+05:14:41 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -o LinkedList_Students_Project.exe main.o students.o 
+05:15:40 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o LinkedList_Students_Project.exe main.o students.o 
+Info: Nothing to build for LinkedList_Students_Project
+05:16:31 **** Incremental Build of configuration Debug for project LinkedList_Students_Project ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o LinkedList_Students_Project.exe main.o students.o 

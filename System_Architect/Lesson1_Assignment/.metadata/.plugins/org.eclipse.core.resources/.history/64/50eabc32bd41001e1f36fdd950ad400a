@@ -1,0 +1,22 @@
+/*
+ * lifo.c
+ *
+ *  Created on: Aug 23, 2023
+ *      Author: andre
+ */
+
+
+LIFO_status LIFO_Init(LIFO_Buf_t* lifo_buf, uint32* buf){
+	lifo_buf->base = 0;
+	lifo_buf->count = 0;
+	lifo_buf->head = 0;
+	lifo_buf->length
+}
+
+LIFO_status LIFO_Push_Item(LIFO_Buf_t* lifo_buf, uint32 item){
+
+}
+
+LIFO_status LIFO_Pop_Item(LIFO_Buf_t* lifo_buf, uint32* item){
+
+}

@@ -1,0 +1,22 @@
+/*
+ * main.c
+ *
+ *  Created on: Aug 23, 2023
+ *      Author: andre
+ */
+
+#include "lifo.h"
+#include "platform_types.h"
+#include <stdio.h>
+#include <stdlib.h>
+
+uint32 buffer1[5];
+uint32* buffer2 = (uint32*)malloc(5*sizeof(uint32));
+
+int int main() {
+	LIFO_Buf_t uart_lifo, i2c_lifo;
+	LIFO_Init(&uart_lifo, buffer1);
+	LIFO_Init(&i2c_lifo, buffer2);
+
+
+}

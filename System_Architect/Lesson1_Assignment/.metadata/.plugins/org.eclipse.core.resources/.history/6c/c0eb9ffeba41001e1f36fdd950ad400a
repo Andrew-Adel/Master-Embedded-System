@@ -1,0 +1,19 @@
+/*
+ * lifo.h
+ *
+ *  Created on: Aug 23, 2023
+ *      Author: andre
+ */
+
+#include "platform_types.h"
+#ifndef LIFO_H_
+#define LIFO_H_
+
+typedef struct {
+	uint32 length;
+	uint32 count;
+	uint32* base;
+	uint32* head;
+};
+
+#endif

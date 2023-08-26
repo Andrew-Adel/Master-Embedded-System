@@ -1,0 +1,20 @@
+/*
+ * main.c
+ *
+ *  Created on: Aug 23, 2023
+ *      Author: andre
+ */
+
+#include "lifo.h"
+#include "platform_types.h"
+#include <stdio.h>
+
+
+uint32 buffer1[5], buffer2[5];
+
+int int main() {
+	LIFO_Buf_t uart_lifo, i2c_lifo;
+	LIFO_Init(&uart_lifo, buffer1)
+
+
+}

@@ -1,0 +1,68 @@
+/*
+ * main.c
+ *
+ *  Created on: Aug 23, 2023
+ *      Author: andre
+ */
+
+#include "students.h"
+
+SStudent* gpFirstStudent = NULL;
+
+int main ()
+{
+	char temp[40];
+	while (1)
+	{
+		DPRINT("\n =====================================");
+		DPRINT("\n\t Choose of the following Options \n");
+		DPRINT("\n 1: AddStudent ");
+		DPRINT("\n 2: DeleteStudent ");
+		DPRINT("\n 3: ViewStudents ");
+		DPRINT("\n 4: DeleteAll ");
+		DPRINT("\n 5: GetNth ");
+		DPRINT("\n 6: ListLength ");
+		DPRINT("\n 7: GetNth_ByBack ");
+		DPRINT("\n 8: GetMiddle ");
+		DPRINT("\n 9: CheckLoop ");
+		DPRINT("\n 10: ReverseList ");
+		DPRINT("\n Enter Option Number: ");
+		gets(temp);
+		DPRINT("\n =====================================");
+
+		switch (atoi(temp)) {
+		case 1:
+			AddStudent(gpFirstStudent);
+			break;
+		case 2:
+			DeleteStudent(gpFirstStudent);
+			break;
+		case 3:
+			ViewStudents(gpFirstStudent);
+			break;
+		case 4:
+			DeleteAll(gpFirstStudent);
+			break;
+		case 5:
+			GetNth(gpFirstStudent);
+			break;
+		case 6:
+			ListLength(gpFirstStudent);
+			break;
+		case 7:
+			GetNth_ByBack(gpFirstStudent);
+			break;
+		case 8:
+			GetMiddle(gpFirstStudent);
+			break;
+		case 9:
+			CheckLoop(SStudent* gpFirstStudent);
+			break;
+		case 10:
+			break;
+		default:
+			DPRINT("\n Wrong Option");
+			break;
+		}
+	}
+}
