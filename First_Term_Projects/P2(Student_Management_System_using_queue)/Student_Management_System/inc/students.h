@@ -36,7 +36,7 @@ void tot_s(void);
 void del_s(void);
 // Update the Students Details by Roll Number
 void up_s(void);
-// Show all Information
+// Show all Information about all students
 void show_s(void);
 
 // // Print data of specific student

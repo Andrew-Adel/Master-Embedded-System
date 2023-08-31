@@ -15,8 +15,6 @@ int main(){
 		DPRINT("[ERROR] Cannot Initialize");
 		return 0;
 	}
-	//	add_student_file();
-	//	find_rl();
 	DPRINT("Welcome to The Student Management System\n");
 	while(1){
 		DPRINT("=============================================================\n");
