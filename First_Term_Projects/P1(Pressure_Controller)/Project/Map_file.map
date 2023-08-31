@@ -1,0 +1,188 @@
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+flash            0x08000000         0x00020000         xr
+sram             0x20000000         0x00005000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+
+.text           0x08000000      0x280
+                0x08000000                _S_TEXT = .
+ *(.vectors*)
+ .vectors       0x08000000       0x1c Startup.o
+                0x08000000                g_p_fn_Vectors
+ *(.text*)
+ .text          0x0800001c       0x50 Alarm_Actuatot_Driver.o
+                0x0800001c                Set_Alarm_actuator
+ .text          0x0800006c       0x7c Alarm_System.o
+                0x0800006c                Set_Timer
+                0x080000b0                Turn_on_Alarm
+                0x080000c0                Turn_off_Alarm
+                0x080000d0                Set_Output
+ .text          0x080000e8       0x28 main.o
+                0x080000e8                main
+ .text          0x08000110       0x98 PortA_driver.o
+                0x08000110                GPIO_PA_INITIALIZATION
+ .text          0x080001a8       0x18 Pressure_Sensor_Driver.o
+                0x080001a8                Read_PressureSensor
+ .text          0x080001c0       0xc0 Startup.o
+                0x080001c0                Reset_Handler
+                0x08000274                H_Fault_Handler
+                0x08000274                MM_Fault_Handler
+                0x08000274                Bus_Fault_Handler
+                0x08000274                Default_Handler
+                0x08000274                Usage_Fault_Handler
+                0x08000274                NMI_Handler
+ *(.rodata)
+                0x08000280                _E_TEXT = .
+
+.glue_7         0x08000280        0x0
+ .glue_7        0x00000000        0x0 linker stubs
+
+.glue_7t        0x08000280        0x0
+ .glue_7t       0x00000000        0x0 linker stubs
+
+.vfp11_veneer   0x08000280        0x0
+ .vfp11_veneer  0x00000000        0x0 linker stubs
+
+.v4_bx          0x08000280        0x0
+ .v4_bx         0x00000000        0x0 linker stubs
+
+.iplt           0x08000280        0x0
+ .iplt          0x00000000        0x0 Alarm_Actuatot_Driver.o
+
+.rel.dyn        0x08000280        0x0
+ .rel.iplt      0x00000000        0x0 Alarm_Actuatot_Driver.o
+
+.data           0x20000000        0x0 load address 0x08000280
+                0x20000000                _S_DATA = .
+ *(.data)
+ .data          0x20000000        0x0 Alarm_Actuatot_Driver.o
+ .data          0x20000000        0x0 Alarm_System.o
+ .data          0x20000000        0x0 main.o
+ .data          0x20000000        0x0 PortA_driver.o
+ .data          0x20000000        0x0 Pressure_Sensor_Driver.o
+ .data          0x20000000        0x0 Startup.o
+ *(.data*)
+                0x20000000                . = ALIGN (0x4)
+                0x20000000                _E_DATA = .
+
+.igot.plt       0x20000000        0x0 load address 0x08000280
+ .igot.plt      0x00000000        0x0 Alarm_Actuatot_Driver.o
+
+.bss            0x20000000     0x1000 load address 0x08000280
+                0x20000000                _S_BSS = .
+ *(.bss*)
+ .bss           0x20000000        0x0 Alarm_Actuatot_Driver.o
+ .bss           0x20000000        0x0 Alarm_System.o
+ .bss           0x20000000        0x0 main.o
+ .bss           0x20000000        0x0 PortA_driver.o
+ .bss           0x20000000        0x0 Pressure_Sensor_Driver.o
+ .bss           0x20000000        0x0 Startup.o
+                0x20000000                _E_BSS = .
+                0x20000000                . = ALIGN (0x4)
+                0x20001000                . = (. + 0x1000)
+ *fill*         0x20000000     0x1000 
+                0x20001000                _stack_top = .
+LOAD Alarm_Actuatot_Driver.o
+LOAD Alarm_System.o
+LOAD main.o
+LOAD PortA_driver.o
+LOAD Pressure_Sensor_Driver.o
+LOAD Startup.o
+OUTPUT(Pressure_Controller.elf elf32-littlearm)
+
+.debug_info     0x00000000      0x4e7
+ .debug_info    0x00000000       0xa5 Alarm_Actuatot_Driver.o
+ .debug_info    0x000000a5       0xf3 Alarm_System.o
+ .debug_info    0x00000198       0x9f main.o
+ .debug_info    0x00000237       0x8c PortA_driver.o
+ .debug_info    0x000002c3       0x97 Pressure_Sensor_Driver.o
+ .debug_info    0x0000035a      0x18d Startup.o
+
+.debug_abbrev   0x00000000      0x293
+ .debug_abbrev  0x00000000       0x60 Alarm_Actuatot_Driver.o
+ .debug_abbrev  0x00000060       0x78 Alarm_System.o
+ .debug_abbrev  0x000000d8       0x53 main.o
+ .debug_abbrev  0x0000012b       0x42 PortA_driver.o
+ .debug_abbrev  0x0000016d       0x4f Pressure_Sensor_Driver.o
+ .debug_abbrev  0x000001bc       0xd7 Startup.o
+
+.debug_loc      0x00000000      0x1e8
+ .debug_loc     0x00000000       0x38 Alarm_Actuatot_Driver.o
+ .debug_loc     0x00000038       0xbc Alarm_System.o
+ .debug_loc     0x000000f4       0x38 main.o
+ .debug_loc     0x0000012c       0x2c PortA_driver.o
+ .debug_loc     0x00000158       0x2c Pressure_Sensor_Driver.o
+ .debug_loc     0x00000184       0x64 Startup.o
+
+.debug_aranges  0x00000000       0xc0
+ .debug_aranges
+                0x00000000       0x20 Alarm_Actuatot_Driver.o
+ .debug_aranges
+                0x00000020       0x20 Alarm_System.o
+ .debug_aranges
+                0x00000040       0x20 main.o
+ .debug_aranges
+                0x00000060       0x20 PortA_driver.o
+ .debug_aranges
+                0x00000080       0x20 Pressure_Sensor_Driver.o
+ .debug_aranges
+                0x000000a0       0x20 Startup.o
+
+.debug_line     0x00000000      0x230
+ .debug_line    0x00000000       0x60 Alarm_Actuatot_Driver.o
+ .debug_line    0x00000060       0x61 Alarm_System.o
+ .debug_line    0x000000c1       0x3d main.o
+ .debug_line    0x000000fe       0x59 PortA_driver.o
+ .debug_line    0x00000157       0x5e Pressure_Sensor_Driver.o
+ .debug_line    0x000001b5       0x7b Startup.o
+
+.debug_str      0x00000000      0x26f
+ .debug_str     0x00000000      0x128 Alarm_Actuatot_Driver.o
+                                0x14f (size before relaxing)
+ .debug_str     0x00000128       0x49 Alarm_System.o
+                                0x166 (size before relaxing)
+ .debug_str     0x00000171       0x15 main.o
+                                0x132 (size before relaxing)
+ .debug_str     0x00000186       0x26 PortA_driver.o
+                                0x14a (size before relaxing)
+ .debug_str     0x000001ac       0x2d Pressure_Sensor_Driver.o
+                                0x151 (size before relaxing)
+ .debug_str     0x000001d9       0x96 Startup.o
+                                0x1ba (size before relaxing)
+
+.comment        0x00000000       0x11
+ .comment       0x00000000       0x11 Alarm_Actuatot_Driver.o
+                                 0x12 (size before relaxing)
+ .comment       0x00000000       0x12 Alarm_System.o
+ .comment       0x00000000       0x12 main.o
+ .comment       0x00000000       0x12 PortA_driver.o
+ .comment       0x00000000       0x12 Pressure_Sensor_Driver.o
+ .comment       0x00000000       0x12 Startup.o
+
+.ARM.attributes
+                0x00000000       0x33
+ .ARM.attributes
+                0x00000000       0x33 Alarm_Actuatot_Driver.o
+ .ARM.attributes
+                0x00000033       0x33 Alarm_System.o
+ .ARM.attributes
+                0x00000066       0x33 main.o
+ .ARM.attributes
+                0x00000099       0x33 PortA_driver.o
+ .ARM.attributes
+                0x000000cc       0x33 Pressure_Sensor_Driver.o
+ .ARM.attributes
+                0x000000ff       0x33 Startup.o
+
+.debug_frame    0x00000000      0x178
+ .debug_frame   0x00000000       0x2c Alarm_Actuatot_Driver.o
+ .debug_frame   0x0000002c       0x80 Alarm_System.o
+ .debug_frame   0x000000ac       0x30 main.o
+ .debug_frame   0x000000dc       0x28 PortA_driver.o
+ .debug_frame   0x00000104       0x28 Pressure_Sensor_Driver.o
+ .debug_frame   0x0000012c       0x4c Startup.o

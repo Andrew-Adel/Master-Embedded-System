@@ -1,0 +1,10 @@
+reading from pressure sensor is done each 1 sec to save microcontroller usage from reading from external device
+
+the warning due to high usage of my processor
+
+
+
+until protous reach 60 sec we will see symbols
+
+lets see map_file
+led down after 60 sec
