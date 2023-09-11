@@ -1,0 +1,5 @@
+Task#1: LEDs Sequence Auto
+Task#2: LEDs Sequence Manual
+Task#3: Buzzer by Pull Down
+(notes, all buttons work by Pull Down)
+Bounce Task: 7-Seg sequence manual by button
