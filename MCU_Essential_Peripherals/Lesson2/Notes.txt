@@ -1,0 +1,4 @@
+1.This Calculator make +,-,*,/ operations
+2.each time the operation has done, it will clear LCD when press and number
+3.you cannot press '=' until you enter 2 operant and operator between them
+4.you cannot press any operator until enter the first operant
