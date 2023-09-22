@@ -1,0 +1,4 @@
+keypad.c:20:6:KP_delay	24	static
+keypad.c:28:6:KEYPAD_8PINS_Config	16	static
+keypad.c:90:6:Keypad_init	8	static
+keypad.c:99:6:Keypad_getkey	16	static
